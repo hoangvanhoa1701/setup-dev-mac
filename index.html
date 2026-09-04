@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultimate Mac Setup for Developers & Vibe Coding</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+            },
+            surface: {
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            },
+            accent: {
+              cyan: '#06b6d4',
+              purple: '#a855f7',
+              amber: '#f59e0b',
+            }
+          },
+          fontFamily: {
+            mono: ['"JetBrains Mono"', '"Fira Code"', 'ui-monospace', 'monospace'],
+            sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+  </style>
+</head>
+<body class="bg-surface-950 text-slate-200 font-sans antialiased selection:bg-brand-500 selection:text-white min-h-screen flex flex-col">
+
+  <!-- Header Sticky Navigation -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-surface-950/80 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-accent-cyan flex items-center justify-center shadow-lg shadow-brand-500/20">
+          <i data-lucide="terminal" class="w-5 h-5 text-white"></i>
+        </div>
+        <div>
+          <h1 class="font-bold text-lg text-white flex items-center gap-2">
+            <span>Mac Dev & Vibe Coding Setup</span>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-brand-500/10 text-brand-500 border border-brand-500/20 font-mono">macOS 15+ Apple Silicon</span>
+          </h1>
+          <p class="text-xs text-slate-400" data-lang-en="Ultimate AI-First & Developer Environment Guide" data-lang-vi="Cẩm nang thiết lập môi trường Lập trình & Vibe Coding tối thượng">
+            Cẩm nang thiết lập môi trường Lập trình & Vibe Coding tối thượng
+          </p>
+        </div>
+      </div>
+
+      <!-- Actions & Language Switcher -->
+      <div class="flex items-center space-x-3">
+        <!-- Progress Counter -->
+        <div class="hidden md:flex items-center gap-2 text-xs font-mono bg-surface-900 border border-slate-800 px-3 py-1.5 rounded-lg">
+          <i data-lucide="check-circle" class="w-4 h-4 text-brand-500"></i>
+          <span data-lang-en="Completed:" data-lang-vi="Đã xong:">Đã xong:</span>
+          <span id="progress-stat" class="font-bold text-brand-500">0%</span>
+        </div>
+
+        <!-- Language Switcher Button -->
+        <div class="inline-flex rounded-lg border border-slate-800 bg-surface-900 p-0.5">
+          <button id="lang-btn-vi" onclick="setLanguage('vi')" class="px-2.5 py-1 text-xs font-semibold rounded-md transition-all bg-brand-500 text-white shadow-sm">
+            🇻🇳 VN
+          </button>
+          <button id="lang-btn-en" onclick="setLanguage('en')" class="px-2.5 py-1 text-xs font-semibold rounded-md text-slate-400 hover:text-white transition-all">
+            🇺🇸 EN
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Layout -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="hidden lg:block lg:col-span-3">
+      <div class="sticky top-24 space-y-4">
+        <div class="p-4 rounded-xl bg-surface-900/90 border border-slate-800 backdrop-blur">
+          <div class="flex items-center justify-between mb-3 text-xs font-semibold uppercase tracking-wider text-slate-400">
+            <span data-lang-en="Setup Roadmap" data-lang-vi="Lộ trình thiết lập">Lộ trình thiết lập</span>
+            <span class="text-brand-500 font-mono">7 Phases</span>
+          </div>
+          <nav class="space-y-1 text-sm">
+            <a href="#phase-1" class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-800/80 text-brand-500 font-medium border border-brand-500/20">
+              <span class="flex items-center gap-2">
+                <span class="w-5 h-5 rounded-md bg-brand-500/20 text-brand-500 flex items-center justify-center text-xs font-mono">1</span>
+                <span data-lang-en="macOS System & UX" data-lang-vi="Hệ thống macOS & UX">Hệ thống macOS & UX</span>
+              </span>
+              <i data-lucide="chevron-right" class="w-4 h-4 text-brand-500"></i>
+            </a>
+            <a href="#backup-restore" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition">
+              <span class="flex items-center gap-2">
+                <span class="w-5 h-5 rounded-md bg-accent-amber/20 text-accent-amber flex items-center justify-center text-xs font-mono">★</span>
+                <span data-lang-en="Backup & Export Settings" data-lang-vi="Sao lưu & Xuất Setting">Sao lưu & Xuất Setting</span>
+              </span>
+            </a>
+            <a href="#phase-2" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-60">
+              <span class="flex items-center gap-2">
+                <span class="w-5 h-5 rounded-md bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono">2</span>
+                <span data-lang-en="Package Manager & CLI" data-lang-vi="Homebrew & CLI Core">Homebrew & CLI Core</span>
+              </span>
+              <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">Reviewing</span>
+            </a>
+            <a href="#phase-3" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-40">
+              <span class="flex items-center gap-2">
+                <span class="w-5 h-5 rounded-md bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono">3</span>
+                <span data-lang-en="Runtimes & Containers" data-lang-vi="Runtime & Đóng gói">Runtime & Đóng gói</span>
+              </span>
+            </a>
+            <a href="#phase-4" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-40">
+              <span class="flex items-center gap-2">
+                <span class="w-5 h-5 rounded-md bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono">4</span>
+                <span data-lang-en="Vibe Coding & AI Stack" data-lang-vi="Vibe Coding & AI Stack">Vibe Coding & AI Stack</span>
+              </span>
+            </a>
+            <a href="#phase-5" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-40">
+              <span class="flex items-center gap-2">
+                <span class="w-5 h-5 rounded-md bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono">5</span>
+                <span data-lang-en="Terminal & Git Workflow" data-lang-vi="Terminal & Git Pro">Terminal & Git Pro</span>
+              </span>
+            </a>
+            <a href="#phase-6" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-40">
+              <span class="flex items-center gap-2">
+                <span class="w-5 h-5 rounded-md bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono">6</span>
+                <span data-lang-en="Productivity Suite" data-lang-vi="Tiện ích & Năng suất">Tiện ích & Năng suất</span>
+              </span>
+            </a>
+            <a href="#phase-7" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-40">
+              <span class="flex items-center gap-2">
+                <span class="w-5 h-5 rounded-md bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono">7</span>
+                <span data-lang-en="Automation & Test" data-lang-vi="Tự động hóa & Kiểm tra">Tự động hóa & Kiểm tra</span>
+              </span>
+            </a>
+          </nav>
+        </div>
+
+        <!-- Quick Tips Widget -->
+        <div class="p-4 rounded-xl bg-gradient-to-br from-brand-950/40 to-surface-900 border border-brand-500/20">
+          <div class="flex items-center gap-2 text-brand-500 text-xs font-bold uppercase tracking-wider mb-2">
+            <i data-lucide="zap" class="w-4 h-4"></i>
+            <span data-lang-en="Vibe Coding Tip" data-lang-vi="Mẹo Vibe Coding">Mẹo Vibe Coding</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed" data-lang-en="Fast key repetition is crucial when navigating with Vim keybindings in Cursor and Zed editors." data-lang-vi="Tốc độ lặp phím nhanh cực kỳ quan trọng khi điều hướng code bằng phím Vim trong Cursor và Zed.">
+            Tốc độ lặp phím nhanh cực kỳ quan trọng khi điều hướng code bằng phím Vim trong Cursor và Zed.
+          </p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="lg:col-span-9 space-y-10">
+      
+      <!-- Intro Banner -->
+      <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-surface-900 via-surface-900 to-slate-900 border border-slate-800 p-6 md:p-8">
+        <div class="absolute -top-24 -right-24 w-72 h-72 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-accent-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="relative z-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-xs font-medium mb-3">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span data-lang-en="Optimized for M1/M2/M3/M4 Chips" data-lang-vi="Tối ưu riêng cho chip M1/M2/M3/M4 Apple Silicon">Tối ưu riêng cho chip M1/M2/M3/M4 Apple Silicon</span>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight" data-lang-en="Build the Ultimate Developer & Vibe Coding Mac" data-lang-vi="Xây dựng Môi trường Lập trình & Vibe Coding Đỉnh cao">
+            Xây dựng Môi trường Lập trình & Vibe Coding Đỉnh cao
+          </h2>
+          <p class="mt-2 text-sm text-slate-400 max-w-2xl leading-relaxed" data-lang-en="A streamlined step-by-step setup guide with one-click copy terminal commands, direct links, and backup automation scripts for lightning-fast coding and AI workflows." data-lang-vi="Hướng dẫn thiết lập từng bước chi tiết, hỗ trợ sao chép lệnh Terminal 1-click, đường dẫn trực tiếp và script sao lưu tự động cho quy trình code tốc độ cao cùng AI.">
+            Hướng dẫn thiết lập từng bước chi tiết, hỗ trợ sao chép lệnh Terminal 1-click, đường dẫn trực tiếp và script sao lưu tự động cho quy trình code tốc độ cao cùng AI.
+          </p>
+        </div>
+      </div>
+
+      <!-- ================================================================= -->
+      <!-- PHASE 1: SYSTEM & UX -->
+      <!-- ================================================================= -->
+      <section id="phase-1" class="space-y-6">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+          <div class="flex items-center space-x-3">
+            <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-brand-500/20 text-brand-500 font-mono font-bold text-sm border border-brand-500/30">01</span>
+            <h3 class="text-xl font-bold text-white" data-lang-en="macOS System & UX Optimization" data-lang-vi="Tối ưu Hệ thống & Trải nghiệm macOS">
+              Tối ưu Hệ thống & Trải nghiệm macOS
+            </h3>
+          </div>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-brand-500/10 text-brand-500 border border-brand-500/20 font-medium" data-lang-en="Approved" data-lang-vi="Đã duyệt">
+            Đã duyệt
+          </span>
+        </div>
+
+        <!-- 1.1 Keyboard & Trackpad -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="keyboard" class="w-4 h-4 text-accent-cyan"></i>
+                <span data-lang-en="1.1. Supercharged Keyboard Repeat & Press-and-Hold" data-lang-vi="1.1. Tăng tốc độ Lặp phím & Tắt giữ phím hiện dấu">1.1. Tăng tốc độ Lặp phím & Tắt giữ phím hiện dấu</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Enables ultra-fast cursor movement and character repeat (essential for Vim/Cursor navigation)." data-lang-vi="Cho phép giữ phím để lặp ký tự siêu nhanh và tắt popup dấu tiếng Anh của Apple (rất cần thiết khi dùng phím Vim trong editor).">
+                Cho phép giữ phím để lặp ký tự siêu nhanh và tắt popup dấu tiếng Anh của Apple (rất cần thiết khi dùng phím Vim trong editor).
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <!-- Code Snippet -->
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Set ultrafast key repeat rate (Delay until repeat: 15, Key repeat rate: 2)</span>
+defaults write -g InitialKeyRepeat -int 15
+defaults write -g KeyRepeat -int 2
+
+<span class="text-slate-500"># Disable press-and-hold popup in favor of real key repeating</span>
+defaults write -g ApplePressAndHoldEnabled -bool false</code></pre>
+          </div>
+        </div>
+
+        <!-- 1.2 Trackpad & Gestures -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="mouse-pointer" class="w-4 h-4 text-accent-purple"></i>
+                <span data-lang-en="1.2. Trackpad Gestures & Tap to Click" data-lang-vi="1.2. Cử chỉ Trackpad & Chạm để nhấp (Tap to Click)">1.2. Cử chỉ Trackpad & Chạm để nhấp (Tap to Click)</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Enable tap-to-click on built-in and Bluetooth Trackpads for silent and effortless clicking." data-lang-vi="Bật chạm để nhấp nhẹ nhàng thay vì phải nhấn lún Trackpad xuống.">
+                Bật chạm để nhấp nhẹ nhàng thay vì phải nhấn lún Trackpad xuống.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Enable "Tap to click" for built-in & Bluetooth trackpad</span>
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1</code></pre>
+          </div>
+        </div>
+
+        <!-- 1.3 Developer-Ready Finder -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="folder" class="w-4 h-4 text-brand-500"></i>
+                <span data-lang-en="1.3. Developer-Optimized Finder Settings" data-lang-vi="1.3. Tối ưu Finder cho Lập trình viên">1.3. Tối ưu Finder cho Lập trình viên</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Show file extensions, path bar, status bar, and keep folders on top when sorting." data-lang-vi="Hiển thị rõ đuôi file (.ts, .env, .json), thanh đường dẫn, thanh trạng thái và giữ thư mục trên đầu.">
+                Hiển thị rõ đuôi file (.ts, .env, .json), thanh đường dẫn, thanh trạng thái và giữ thư mục trên đầu.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Always show all file extensions</span>
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+<span class="text-slate-500"># Show Path bar and Status bar</span>
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+
+<span class="text-slate-500"># Keep folders on top when sorting by name</span>
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+<span class="text-slate-500"># Avoid creating .DS_Store files on network or USB volumes</span>
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+<span class="text-slate-500"># Restart Finder to apply</span>
+killall Finder</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- PRO FEATURE: BACKUP & EXPORT CURRENT SETTINGS -->
+      <!-- ================================================================= -->
+      <section id="backup-restore" class="space-y-6">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+          <div class="flex items-center space-x-3">
+            <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-accent-amber/20 text-accent-amber font-mono font-bold text-sm border border-accent-amber/30">★</span>
+            <div>
+              <h3 class="text-xl font-bold text-white flex items-center gap-2" data-lang-en="Pro-Tip: Export & Restore Your Exact Mac Settings" data-lang-vi="Tính năng Pro: Trích xuất & Khôi phục Setting máy Mac hiện tại">
+                <span>Tính năng Pro: Trích xuất & Khôi phục Setting máy Mac hiện tại</span>
+              </h3>
+            </div>
+          </div>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-accent-amber/10 text-accent-amber border border-accent-amber/20 font-medium" data-lang-en="Automation" data-lang-vi="Tự động hóa">
+            Tự động hóa
+          </span>
+        </div>
+
+        <div class="bg-gradient-to-br from-surface-900 to-surface-950 border border-accent-amber/20 rounded-xl p-6 space-y-6">
+          <p class="text-sm text-slate-300 leading-relaxed" data-lang-en="Export your existing trackpad gestures, key repeat rates, mouse speed, Finder, and Dock configurations into a standalone script. When setting up a new Mac, run the generated script to restore everything in 2 seconds without manually clicking through System Settings." data-lang-vi="Trích xuất toàn bộ cử chỉ vuốt 4 ngón trackpad, nhấp 2 ngón, tốc độ phím, độ nhạy chuột, Finder và Dock hiện tại của bạn thành một script độc lập. Khi sang máy Mac mới, chỉ cần chạy script này để khôi phục toàn bộ trong 2 giây mà không cần chỉnh tay từng mục.">
+            Trích xuất toàn bộ cử chỉ vuốt 4 ngón trackpad, nhấp 2 ngón, tốc độ phím, độ nhạy chuột, Finder và Dock hiện tại của bạn thành một script độc lập. Khi sang máy Mac mới, chỉ cần chạy script này để khôi phục toàn bộ trong 2 giây mà không cần chỉnh tay từng mục.
+          </p>
+
+          <!-- Workflow Visual Steps -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            <!-- Step 1: Export -->
+            <div class="p-4 rounded-xl bg-surface-950 border border-slate-800 space-y-3 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-full bg-accent-cyan/20 text-accent-cyan flex items-center justify-center text-xs font-bold font-mono">1</span>
+                  <span class="text-xs font-bold text-white uppercase tracking-wider" data-lang-en="Export Settings" data-lang-vi="Trích xuất Setting">Trích xuất Setting</span>
+                </div>
+                <p class="text-xs text-slate-400" data-lang-en="Run script to scan your current preferences:" data-lang-vi="Chạy script để quét cấu hình trên máy hiện tại:">
+                  Chạy script để quét cấu hình trên máy hiện tại:
+                </p>
+                <div class="relative bg-surface-900 rounded p-2.5 font-mono text-xs text-slate-200">
+                  <button onclick="copyCode(this)" class="absolute top-2 right-2 p-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs">
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                  </button>
+                  <code id="export-cmd-code">bash scripts/export-macos-settings.vi.sh</code>
+                </div>
+              </div>
+              <div class="pt-2 border-t border-slate-800/80 flex items-center gap-2">
+                <a id="script-link" href="scripts/export-macos-settings.vi.sh" target="_blank" class="inline-flex items-center gap-1.5 text-[11px] text-accent-cyan hover:underline font-mono">
+                  <i data-lucide="file-code" class="w-3.5 h-3.5"></i>
+                  <span id="script-link-text">scripts/export-macos-settings.vi.sh</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Step 2: Storage Location -->
+            <div class="p-4 rounded-xl bg-surface-950 border border-slate-800 space-y-3 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-full bg-accent-amber/20 text-accent-amber flex items-center justify-center text-xs font-bold font-mono">2</span>
+                  <span class="text-xs font-bold text-white uppercase tracking-wider" data-lang-en="Saved File Location" data-lang-vi="Vị trí lưu file">Vị trí lưu file</span>
+                </div>
+                <p class="text-xs text-slate-400" data-lang-en="Script automatically generates your backup in:" data-lang-vi="Script tự động tạo file khôi phục tại thư mục:">
+                  Script tự động tạo file khôi phục tại thư mục:
+                </p>
+                <div class="bg-surface-900 rounded p-2.5 font-mono text-xs text-accent-amber flex items-center gap-2">
+                  <i data-lucide="folder-check" class="w-4 h-4 text-accent-amber shrink-0"></i>
+                  <span id="backup-output-path" class="break-all">backups/apply-my-settings.vi.sh</span>
+                </div>
+              </div>
+              <p class="text-[11px] text-slate-400 pt-2 border-t border-slate-800/80" data-lang-en="Store this file on iCloud Drive, USB, or Git dotfiles repository." data-lang-vi="Lưu file này vào iCloud Drive, USB hoặc kho Git cá nhân.">
+                Lưu file này vào iCloud Drive, USB hoặc kho Git cá nhân.
+              </p>
+            </div>
+
+            <!-- Step 3: Restore / Import -->
+            <div class="p-4 rounded-xl bg-surface-950 border border-slate-800 space-y-3 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-full bg-brand-500/20 text-brand-500 flex items-center justify-center text-xs font-bold font-mono">3</span>
+                  <span class="text-xs font-bold text-white uppercase tracking-wider" data-lang-en="Import on New Mac" data-lang-vi="Khôi phục trên máy mới">Khôi phục trên máy mới</span>
+                </div>
+                <p class="text-xs text-slate-400" data-lang-en="Run command on your new Mac to restore:" data-lang-vi="Chạy lệnh trên máy Mac mới để khôi phục:">
+                  Chạy lệnh trên máy Mac mới để khôi phục:
+                </p>
+                <div class="relative bg-surface-900 rounded p-2.5 font-mono text-xs text-slate-200">
+                  <button onclick="copyCode(this)" class="absolute top-2 right-2 p-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs">
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                  </button>
+                  <code id="apply-cmd-code">bash backups/apply-my-settings.vi.sh</code>
+                </div>
+              </div>
+              <p class="text-[11px] text-brand-500 font-medium pt-2 border-t border-slate-800/80 flex items-center gap-1.5">
+                <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                <span data-lang-en="Instant effect: auto reloads Finder & Dock" data-lang-vi="Có hiệu lực ngay: tự khởi động lại Finder & Dock">Có hiệu lực ngay: tự khởi động lại Finder & Dock</span>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500 space-y-2">
+        <p data-lang-en="Built for Modern Developers & Vibe Coding • macOS Apple Silicon" data-lang-vi="Dành riêng cho Lập trình viên hiện đại & Vibe Coding • macOS Apple Silicon">
+          Dành riêng cho Lập trình viên hiện đại & Vibe Coding • macOS Apple Silicon
+        </p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Toast Notification for Copy -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-surface-800 border border-brand-500/30 text-white px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-2 text-sm font-medium">
+    <i data-lucide="check-circle" class="w-4 h-4 text-brand-500"></i>
+    <span id="toast-text">Đã sao chép vào bộ nhớ tạm!</span>
+  </div>
+
+  <!-- Script Logic -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Bilingual State Management
+    let currentLang = localStorage.getItem('mac_setup_lang') || 'vi';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('mac_setup_lang', lang);
+      
+      const btnVi = document.getElementById('lang-btn-vi');
+      const btnEn = document.getElementById('lang-btn-en');
+      
+      if (lang === 'vi') {
+        btnVi.className = 'px-2.5 py-1 text-xs font-semibold rounded-md transition-all bg-brand-500 text-white shadow-sm';
+        btnEn.className = 'px-2.5 py-1 text-xs font-semibold rounded-md text-slate-400 hover:text-white transition-all';
+      } else {
+        btnEn.className = 'px-2.5 py-1 text-xs font-semibold rounded-md transition-all bg-brand-500 text-white shadow-sm';
+        btnVi.className = 'px-2.5 py-1 text-xs font-semibold rounded-md text-slate-400 hover:text-white transition-all';
+      }
+
+      // Update text in elements
+      document.querySelectorAll('[data-lang-en]').forEach(el => {
+        const text = el.getAttribute(`data-lang-${lang}`);
+        if (text) {
+          if (el.tagName === 'INPUT' && el.type === 'placeholder') {
+            el.placeholder = text;
+          } else {
+            el.textContent = text;
+          }
+        }
+      });
+
+      // Update dynamic script paths & commands based on language
+      const scriptLink = document.getElementById('script-link');
+      const scriptLinkText = document.getElementById('script-link-text');
+      const exportCmdCode = document.getElementById('export-cmd-code');
+      const backupOutputPath = document.getElementById('backup-output-path');
+      const applyCmdCode = document.getElementById('apply-cmd-code');
+
+      if (scriptLink && scriptLinkText && exportCmdCode && backupOutputPath && applyCmdCode) {
+        if (lang === 'vi') {
+          scriptLink.href = 'scripts/export-macos-settings.vi.sh';
+          scriptLinkText.textContent = 'scripts/export-macos-settings.vi.sh';
+          exportCmdCode.textContent = 'bash scripts/export-macos-settings.vi.sh';
+          backupOutputPath.textContent = 'backups/apply-my-settings.vi.sh';
+          applyCmdCode.textContent = 'bash backups/apply-my-settings.vi.sh';
+        } else {
+          scriptLink.href = 'scripts/export-macos-settings.en.sh';
+          scriptLinkText.textContent = 'scripts/export-macos-settings.en.sh';
+          exportCmdCode.textContent = 'bash scripts/export-macos-settings.en.sh';
+          backupOutputPath.textContent = 'backups/apply-my-settings.en.sh';
+          applyCmdCode.textContent = 'bash backups/apply-my-settings.en.sh';
+        }
+      }
+    }
+
+    // Copy to Clipboard
+    function copyCode(btn) {
+      const parent = btn.closest('.relative');
+      const code = parent.querySelector('code').innerText;
+      
+      navigator.clipboard.writeText(code).then(() => {
+        const label = btn.querySelector('.copy-label');
+        const originalText = label ? label.textContent : '';
+        if (label) {
+          label.textContent = currentLang === 'vi' ? 'Đã chép!' : 'Copied!';
+        }
+        showToast(currentLang === 'vi' ? 'Đã sao chép lệnh vào clipboard!' : 'Copied command to clipboard!');
+        
+        setTimeout(() => {
+          if (label) label.textContent = currentLang === 'vi' ? 'Sao chép' : 'Copy';
+        }, 2000);
+      });
+    }
+
+    // Toast Popup
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toast-text');
+      toastText.textContent = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      
+      setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 2500);
+    }
+
+    // Progress Checklist
+    function toggleStep(checkbox) {
+      const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+      const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+      const percent = Math.round((checked.length / allCheckboxes.length) * 100);
+      document.getElementById('progress-stat').textContent = `${percent}%`;
+    }
+
+    // Init language on load
+    document.addEventListener('DOMContentLoaded', () => {
+      setLanguage(currentLang);
+    });
+  </script>
+</body>
+</html>
