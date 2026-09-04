@@ -3661,6 +3661,263 @@ brew bundle --file=Brewfile</code></pre>
           </div>
         </div>
 
+        <!-- SECTION 6: Step-by-Step Executable Masterclass (Commands & Code) -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-2 text-brand-500 font-bold text-sm uppercase tracking-wider border-b border-slate-800 pb-1.5">
+            <i data-lucide="terminal" class="w-4 h-4"></i>
+            <span data-lang-en="6. Step-by-Step Executable Masterclass: Commands, Scripts & Workflows" data-lang-vi="6. Cẩm Nang Thực Thi 6 Bước Chi Tiết: Câu Lệnh, Code Mẫu & Kịch Bản">6. Cẩm Nang Thực Thi 6 Bước Chi Tiết: Câu Lệnh, Code Mẫu & Kịch Bản</span>
+          </div>
+
+          <div class="space-y-4">
+            
+            <!-- Step 1: Specs & Rules -->
+            <div class="p-4 bg-surface-950 rounded-xl border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white flex items-center gap-2">
+                  <span class="w-5 h-5 rounded bg-brand-500/20 text-brand-500 flex items-center justify-center font-mono text-[11px]">1</span>
+                  <span>Khởi Tạo Cấu Trúc Thư Mục & File Spec/Plan Mẫu</span>
+                </span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-900 text-slate-400 border border-slate-800">Inception</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">Chạy lệnh tạo thư mục specs và rules chuẩn hóa:</p>
+              <div class="relative bg-surface-900 rounded-lg p-3 font-mono text-[11px] text-slate-200 border border-slate-800">
+                <button onclick="copyCode(this)" class="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[10px] border border-slate-700 transition">
+                  <i data-lucide="copy" class="w-3 h-3"></i> <span class="copy-label">Sao chép</span>
+                </button>
+                <pre class="overflow-x-auto pr-16"><code>mkdir -p specs .agents/skills/security-audit tests/api tests/e2e</code></pre>
+              </div>
+              <p class="text-slate-400 text-[11px]">Tạo file spec mẫu <code class="text-accent-cyan font-mono">specs/auth-jwt.md</code> làm kim chỉ nam bắt buộc:</p>
+              <div class="relative bg-surface-900 rounded-lg p-3 font-mono text-[11px] text-slate-200 border border-slate-800">
+                <button onclick="copyCode(this)" class="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[10px] border border-slate-700 transition">
+                  <i data-lucide="copy" class="w-3 h-3"></i> <span class="copy-label">Sao chép</span>
+                </button>
+                <pre class="overflow-x-auto pr-16"><code>cat << 'EOF' > specs/auth-jwt.md
+# SPEC & PLAN: JWT Authentication Module
+
+## 1. Goal
+Xây dựng endpoint POST /api/v1/auth/login và GET /api/v1/auth/me.
+
+## 2. Shared Contract (Interface Bất Biến)
+- Contract file: src/types/auth.ts
+- Request: { email: string (email valid), password: string (min 8) }
+- Response: { token: string, user: { id: string, email: string, role: string } }
+
+## 3. Phases Checklist
+- [ ] Phase 1: Tạo Shared Type Schema với Zod trong src/types/auth.ts (Main Owner).
+- [ ] Phase 2: Agent A (Worktree Backend) viết Controller trong src/services/auth.ts.
+- [ ] Phase 3: Agent B (Worktree Frontend) viết LoginForm Component & useAuth Hook.
+- [ ] Phase 4: Subagent Reviewer rà soát bảo mật (No Raw SQL, Strict Types).
+- [ ] Phase 5: Chạy API Test (cURL + Vitest) và UI Headless Browser Click Test.
+EOF</code></pre>
+              </div>
+            </div>
+
+            <!-- Step 2: Worktree Creation -->
+            <div class="p-4 bg-surface-950 rounded-xl border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white flex items-center gap-2">
+                  <span class="w-5 h-5 rounded bg-accent-purple/20 text-accent-purple flex items-center justify-center font-mono text-[11px]">2</span>
+                  <span>Tạo Các Git Worktrees Độc Lập Cho Từng Agent</span>
+                </span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-900 text-slate-400 border border-slate-800">Worktree</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">Tạo 2 thư mục làm việc riêng biệt từ nhánh `main` để Agent Backend & Frontend chạy song song:</p>
+              <div class="relative bg-surface-900 rounded-lg p-3 font-mono text-[11px] text-slate-200 border border-slate-800">
+                <button onclick="copyCode(this)" class="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[10px] border border-slate-700 transition">
+                  <i data-lucide="copy" class="w-3 h-3"></i> <span class="copy-label">Sao chép</span>
+                </button>
+                <pre class="overflow-x-auto pr-16"><code># Tạo Worktree cho Backend và Frontend từ nhánh main
+git worktree add -b feat/backend-api /tmp/wt-backend main
+git worktree add -b feat/frontend-ui /tmp/wt-frontend main
+
+# Kiểm tra danh sách worktree
+git worktree list</code></pre>
+              </div>
+            </div>
+
+            <!-- Step 3: Shared Contract & Agent Dispatch -->
+            <div class="p-4 bg-surface-950 rounded-xl border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white flex items-center gap-2">
+                  <span class="w-5 h-5 rounded bg-accent-cyan/20 text-accent-cyan flex items-center justify-center font-mono text-[11px]">3</span>
+                  <span>Chốt Shared Contract Schema & Phân Việc Cho Subagents</span>
+                </span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-900 text-slate-400 border border-slate-800">Contract</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">Main Agent tạo file schema dùng chung <code class="text-brand-500 font-mono">src/types/auth.ts</code> trước khi các Agent code:</p>
+              <div class="relative bg-surface-900 rounded-lg p-3 font-mono text-[11px] text-slate-200 border border-slate-800">
+                <button onclick="copyCode(this)" class="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[10px] border border-slate-700 transition">
+                  <i data-lucide="copy" class="w-3 h-3"></i> <span class="copy-label">Sao chép</span>
+                </button>
+                <pre class="overflow-x-auto pr-16"><code>cat << 'EOF' > src/types/auth.ts
+import { z } from "zod";
+
+export const LoginRequestSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(8),
+});
+
+export const LoginResponseSchema = z.object({
+  token: z.string(),
+  user: z.object({
+    id: z.string(),
+    email: z.string(),
+    role: z.enum(["admin", "user"]),
+  }),
+});
+
+export type LoginRequest = z.infer<typeof LoginRequestSchema>;
+export type LoginResponse = z.infer<typeof LoginResponseSchema>;
+EOF</code></pre>
+              </div>
+              <p class="text-slate-400 text-[11px]">Chạy Agent Backend tại <code class="font-mono text-slate-300">/tmp/wt-backend</code> và Agent Frontend tại <code class="font-mono text-slate-300">/tmp/wt-frontend</code> theo prompt trong Spec.</p>
+            </div>
+
+            <!-- Step 4: Automated Code Review -->
+            <div class="p-4 bg-surface-950 rounded-xl border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white flex items-center gap-2">
+                  <span class="w-5 h-5 rounded bg-accent-amber/20 text-accent-amber flex items-center justify-center font-mono text-[11px]">4</span>
+                  <span>Quy Trình Code Review Tự Động Trước Khi Merge</span>
+                </span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-900 text-slate-400 border border-slate-800">Review Gate</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">Xuất Git diff và triệu hồi subagent Reviewer kiểm tra:</p>
+              <div class="relative bg-surface-900 rounded-lg p-3 font-mono text-[11px] text-slate-200 border border-slate-800">
+                <button onclick="copyCode(this)" class="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[10px] border border-slate-700 transition">
+                  <i data-lucide="copy" class="w-3 h-3"></i> <span class="copy-label">Sao chép</span>
+                </button>
+                <pre class="overflow-x-auto pr-16"><code>cd /tmp/wt-backend
+# 1. Kiểm tra Type Safety toàn diện
+npx tsc --noEmit
+
+# 2. Xuất Diff so sánh với main để Reviewer quét rò rỉ bảo mật
+git diff main...HEAD > /tmp/backend-diff.patch</code></pre>
+              </div>
+            </div>
+
+            <!-- Step 5: Real-World Testing Scripts -->
+            <div class="p-4 bg-surface-950 rounded-xl border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white flex items-center gap-2">
+                  <span class="w-5 h-5 rounded bg-brand-500/20 text-brand-500 flex items-center justify-center font-mono text-[11px]">5</span>
+                  <span>Chạy Bộ Test Thực Chiến (API cURL + Headless UI User Click)</span>
+                </span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-900 text-slate-400 border border-slate-800">Verification</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">Script kiểm thử API thật <code class="text-accent-cyan font-mono">tests/api/verify-api.sh</code>:</p>
+              <div class="relative bg-surface-900 rounded-lg p-3 font-mono text-[11px] text-slate-200 border border-slate-800">
+                <button onclick="copyCode(this)" class="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[10px] border border-slate-700 transition">
+                  <i data-lucide="copy" class="w-3 h-3"></i> <span class="copy-label">Sao chép</span>
+                </button>
+                <pre class="overflow-x-auto pr-16"><code>cat << 'EOF' > tests/api/verify-api.sh
+#!/usr/bin/env bash
+set -e
+
+echo "🚀 Đang kiểm thử API /api/v1/auth/login..."
+RESPONSE=$(curl -s -w "\n%{http_code}" -X POST http://localhost:3000/api/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"admin@vibe.dev","password":"Password123!"}')
+
+HTTP_BODY=$(echo "$RESPONSE" | head -n -1)
+HTTP_STATUS=$(echo "$RESPONSE" | tail -n 1)
+
+if [ "$HTTP_STATUS" -ne 200 ]; then
+  echo "❌ FAIL: API trả về HTTP Status $HTTP_STATUS (Mong đợi 200)" && exit 1
+fi
+
+TOKEN=$(echo "$HTTP_BODY" | jq -r '.token')
+if [ "$TOKEN" = "null" ] || [ -z "$TOKEN" ]; then
+  echo "❌ FAIL: Response không có trường 'token'" && exit 1
+fi
+
+echo "✅ PASS: API hoạt động hoàn hảo! Token nhận được: ${TOKEN:0:15}..."
+EOF
+chmod +x tests/api/verify-api.sh
+bash tests/api/verify-api.sh</code></pre>
+              </div>
+
+              <p class="text-slate-400 text-[11px] pt-1">Script Headless Browser tự động click UI và chụp ảnh màn hình bằng chứng <code class="text-accent-purple font-mono">tests/e2e/login-click.test.ts</code>:</p>
+              <div class="relative bg-surface-900 rounded-lg p-3 font-mono text-[11px] text-slate-200 border border-slate-800">
+                <button onclick="copyCode(this)" class="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[10px] border border-slate-700 transition">
+                  <i data-lucide="copy" class="w-3 h-3"></i> <span class="copy-label">Sao chép</span>
+                </button>
+                <pre class="overflow-x-auto pr-16"><code>cat << 'EOF' > tests/e2e/login-click.test.ts
+import { chromium } from "playwright";
+
+async function runUITest() {
+  console.log("🌐 Đang khởi động Headless Browser để test UI...");
+  const browser = await chromium.launch({ headless: true });
+  const page = await browser.newPage();
+
+  try {
+    // 1. Mở trang Login
+    await page.goto("http://localhost:5173/login", { waitUntil: "networkidle" });
+
+    // 2. Điền Form bằng testid selector
+    console.log("👉 Đang điền form đăng nhập...");
+    await page.fill('[data-testid="email-input"]', "admin@vibe.dev");
+    await page.fill('[data-testid="password-input"]', "Password123!");
+
+    // 3. Thực hiện User Click nút Đăng nhập
+    console.log("👆 Đang bấm nút 'Đăng nhập'...");
+    await page.click('[data-testid="login-btn"]');
+
+    // 4. Đợi điều hướng và kiểm tra Dashboard
+    await page.waitForURL("**/dashboard", { timeout: 5000 });
+
+    // 5. Chụp ảnh màn hình làm bằng chứng nghiệm thu
+    mkdir -p tests/e2e/screenshots
+    await page.screenshot({ path: "tests/e2e/screenshots/login-success.png", fullPage: true });
+    console.log("📸 Bằng chứng nghiệm thu: tests/e2e/screenshots/login-success.png");
+    console.log("✅ PASS: Quy trình User Click UI Web thành công 100%!");
+  } catch (error) {
+    console.error("❌ FAIL:", error);
+    process.exit(1);
+  } finally {
+    await browser.close();
+  }
+}
+runUITest();
+EOF
+npx tsx tests/e2e/login-click.test.ts</code></pre>
+              </div>
+            </div>
+
+            <!-- Step 6: Merge & Cleanup -->
+            <div class="p-4 bg-surface-950 rounded-xl border border-slate-800 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white flex items-center gap-2">
+                  <span class="w-5 h-5 rounded bg-accent-rose/20 text-accent-rose flex items-center justify-center font-mono text-[11px]">6</span>
+                  <span>Merge Nhánh Vào Main & Dọn Dẹp Git Worktree</span>
+                </span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-900 text-slate-400 border border-slate-800">Merge & Cleanup</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">Sau khi test pass, quay về thư mục gốc, merge code và giải phóng worktree:</p>
+              <div class="relative bg-surface-900 rounded-lg p-3 font-mono text-[11px] text-slate-200 border border-slate-800">
+                <button onclick="copyCode(this)" class="absolute top-2 right-2 flex items-center gap-1 px-2 py-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[10px] border border-slate-700 transition">
+                  <i data-lucide="copy" class="w-3 h-3"></i> <span class="copy-label">Sao chép</span>
+                </button>
+                <pre class="overflow-x-auto pr-16"><code># 1. Quay về repo gốc trên nhánh main
+cd ~/Documents/git/my-project
+
+# 2. Merge nhánh backend và frontend
+git merge feat/backend-api --no-ff -m "feat(api): complete JWT authentication backend"
+git merge feat/frontend-ui --no-ff -m "feat(ui): complete LoginForm component"
+
+# 3. Dọn dẹp xóa các worktree tạm
+git worktree remove /tmp/wt-backend
+git worktree remove /tmp/wt-frontend
+git branch -d feat/backend-api feat/frontend-ui
+
+# 4. Chạy lại toàn bộ test suite lần cuối trên main
+bun test</code></pre>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
 
       <!-- Modal Footer -->
