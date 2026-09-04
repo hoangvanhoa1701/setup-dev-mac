@@ -153,11 +153,12 @@
               </span>
               <i data-lucide="check" class="w-4 h-4 text-accent-cyan"></i>
             </a>
-            <a href="#phase-6" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-40">
+            <a href="#phase-6" class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-800/80 text-brand-500 font-medium border border-brand-500/20">
               <span class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono">6</span>
+                <span class="w-5 h-5 rounded-md bg-brand-500/20 text-brand-500 flex items-center justify-center text-xs font-mono">6</span>
                 <span data-lang-en="Productivity Suite" data-lang-vi="Tiện ích & Năng suất">Tiện ích & Năng suất</span>
               </span>
+              <i data-lucide="check" class="w-4 h-4 text-brand-500"></i>
             </a>
             <a href="#phase-7" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-40">
               <span class="flex items-center gap-2">
@@ -1832,6 +1833,198 @@ EOF
 
 <span class="text-slate-500"># Register global excludesfile in Git</span>
 git config --global core.excludesfile ~/.gitignore_global</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- PHASE 6: Productivity Suite -->
+      <section id="phase-6" class="space-y-6">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+          <div class="flex items-center space-x-3">
+            <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-brand-500/20 text-brand-500 font-mono font-bold text-sm border border-brand-500/30">06</span>
+            <div>
+              <h3 class="text-xl font-bold text-white flex items-center gap-2" data-lang-en="Phase 6: macOS Productivity Suite" data-lang-vi="Giai đoạn 6: Bộ Tiện Ích Năng Suất">
+                <span>Giai đoạn 6: Bộ Tiện Ích Năng Suất</span>
+              </h3>
+              <p class="text-xs text-slate-400" data-lang-en="Raycast launcher, Swift-native Shottr screenshot/OCR, Ice menu bar manager, BetterDisplay HiDPI, and Arc browser." data-lang-vi="Launcher Raycast thay Spotlight, chụp ảnh màn hình/OCR Shottr siêu nhẹ, ẩn icon Ice, mở khoá Retina BetterDisplay và Arc browser.">
+                Launcher Raycast thay Spotlight, chụp ảnh màn hình/OCR Shottr siêu nhẹ, ẩn icon Ice, mở khoá Retina BetterDisplay và Arc browser.
+              </p>
+            </div>
+          </div>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-brand-500/10 text-brand-500 border border-brand-500/20 font-medium" data-lang-en="Productivity" data-lang-vi="Năng suất">
+            Năng suất
+          </span>
+        </div>
+
+        <!-- 6.1 Raycast -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="sparkles" class="w-4 h-4 text-accent-rose"></i>
+                <span data-lang-en="6.1. Raycast — Spotlight Replacement & Window Manager" data-lang-vi="6.1. Raycast — Thay Thế Spotlight, Quản Lý Cửa Sổ & Clipboard">6.1. Raycast — Thay Thế Spotlight, Quản Lý Cửa Sổ & Clipboard</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="The ultimate macOS launcher: native Window Management (split/tile), built-in Clipboard History, and deep GitHub/Docker/Notion extensions." data-lang-vi="Launcher số 1 macOS: quản lý chia cửa sổ native, lưu lịch sử clipboard vô hạn, và kho extension tích hợp GitHub, Docker, Jira.">
+                Launcher số 1 macOS: quản lý chia cửa sổ native, lưu lịch sử clipboard vô hạn, và kho extension tích hợp GitHub, Docker, Jira.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://www.raycast.com/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-rose"></i>
+              <span>Raycast Official (raycast.com)</span>
+            </a>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install Raycast</span>
+brew install --cask raycast</code></pre>
+          </div>
+
+          <div class="pt-2 text-xs text-slate-300 space-y-1">
+            <p><strong class="text-slate-200">Mẹo thiết lập:</strong> Đổi phím tắt Spotlight của Apple (<code class="text-brand-500 font-mono">Cmd + Space</code>) sang cho Raycast trong System Settings > Keyboard > Keyboard Shortcuts.</p>
+          </div>
+        </div>
+
+        <!-- 6.2 Shottr -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="camera" class="w-4 h-4 text-accent-cyan"></i>
+                <span data-lang-en="6.2. Shottr — Ultra-Lightweight Screenshot & OCR Tool" data-lang-vi="6.2. Shottr — Chụp Ảnh Màn Hình & Nhận Diện Chữ OCR Siêu Nhẹ">6.2. Shottr — Chụp Ảnh Màn Hình & Nhận Diện Chữ OCR Siêu Nhẹ</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Native Swift screenshot utility (3MB app size): scrolling capture, instant OCR text grab from video/images, and smart auto-blur for sensitive tokens." data-lang-vi="Ứng dụng chụp màn hình native Swift (chỉ 3MB): chụp cuộn trang dài, trích xuất chữ OCR tức thì từ video/ảnh, và tự động làm mờ token/mật khẩu nhạy cảm.">
+                Ứng dụng chụp màn hình native Swift (chỉ 3MB): chụp cuộn trang dài, trích xuất chữ OCR tức thì từ video/ảnh, và tự động làm mờ token/mật khẩu nhạy cảm.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://shottr.cc/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-cyan"></i>
+              <span>Shottr Official (shottr.cc)</span>
+            </a>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install Shottr</span>
+brew install --cask shottr</code></pre>
+          </div>
+        </div>
+
+        <!-- 6.3 Ice -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="layout-grid" class="w-4 h-4 text-accent-purple"></i>
+                <span data-lang-en="6.3. Ice — Powerful Menu Bar Manager (Notch-Safe)" data-lang-vi="6.3. Ice — Quản Lý & Giấu Icon Menu Bar Thông Minh">6.3. Ice — Quản Lý & Giấu Icon Menu Bar Thông Minh</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Open-source Bartender alternative: neatly tucks away menu bar icons to prevent them from hiding behind MacBook notches." data-lang-vi="Giải pháp mã nguồn mở thay thế Bartender: tự động ẩn gọn các icon ít dùng trên menu bar để tránh bị tai thỏ (Notch) MacBook che mất.">
+                Giải pháp mã nguồn mở thay thế Bartender: tự động ẩn gọn các icon ít dùng trên menu bar để tránh bị tai thỏ (Notch) MacBook che mất.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://github.com/jordanbaird-ice/Ice" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-purple"></i>
+              <span>Ice GitHub Repo</span>
+            </a>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install Ice Menu Bar Manager</span>
+brew install --cask jordanbaird-ice</code></pre>
+          </div>
+        </div>
+
+        <!-- 6.4 BetterDisplay -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="monitor" class="w-4 h-4 text-accent-amber"></i>
+                <span data-lang-en="6.4. BetterDisplay — Unlock HiDPI & External Monitor Control" data-lang-vi="6.4. BetterDisplay — Mở Khóa HiDPI Retina & Chỉnh Màn Hình Ngoài">6.4. BetterDisplay — Mở Khóa HiDPI Retina & Chỉnh Màn Hình Ngoài</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Fix blurry fonts on external 2K/4K displays with custom HiDPI scaling and adjust monitor brightness via Apple F1/F2 keys." data-lang-vi="Khắc phục triệt để lỗi mờ chữ trên màn hình rời 2K/4K bằng HiDPI Retina và chỉnh độ sáng màn hình ngoài trực tiếp bằng phím F1/F2 trên Mac.">
+                Khắc phục triệt để lỗi mờ chữ trên màn hình rời 2K/4K bằng HiDPI Retina và chỉnh độ sáng màn hình ngoài trực tiếp bằng phím F1/F2 trên Mac.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://github.com/waydabber/BetterDisplay" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-amber"></i>
+              <span>BetterDisplay GitHub</span>
+            </a>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install BetterDisplay</span>
+brew install --cask betterdisplay</code></pre>
+          </div>
+        </div>
+
+        <!-- 6.5 Arc Browser -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="globe" class="w-4 h-4 text-brand-500"></i>
+                <span data-lang-en="6.5. Arc Browser — The Next-Gen Command Bar Web Browser" data-lang-vi="6.5. Arc Browser — Trình Duyệt Web Thế Hệ Mới cho Developer">6.5. Arc Browser — Trình Duyệt Web Thế Hệ Mới cho Developer</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Command-bar navigation, contextual Spaces (Work, Dev, Personal), built-in split view tabs, and AI search integration." data-lang-vi="Điều hướng dạng command-bar, phân chia không gian Spaces theo dự án, chia đôi tab trực tiếp và tích hợp AI tóm tắt nhanh.">
+                Điều hướng dạng command-bar, phân chia không gian Spaces theo dự án, chia đôi tab trực tiếp và tích hợp AI tóm tắt nhanh.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install Arc Browser</span>
+brew install --cask arc</code></pre>
           </div>
         </div>
       </section>
