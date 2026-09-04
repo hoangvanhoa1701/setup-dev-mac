@@ -144,7 +144,7 @@
                 <span class="w-5 h-5 rounded-md bg-accent-rose/20 text-accent-rose flex items-center justify-center text-xs font-mono">4</span>
                 <span data-lang-en="Vibe Coding & AI Stack" data-lang-vi="Vibe Coding & AI Stack">Vibe Coding & AI Stack</span>
               </span>
-              <span class="text-[10px] px-1.5 py-0.5 rounded bg-accent-rose/20 text-accent-rose">Tier 1</span>
+              <span class="text-[10px] px-1.5 py-0.5 rounded bg-accent-rose/20 text-accent-rose">Tier 1 + 2</span>
             </a>
             <a href="#phase-5" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-50">
               <span class="flex items-center gap-2">
@@ -1244,6 +1244,230 @@ brew install --cask chatgpt</code></pre>
           <div class="pt-2 text-xs text-slate-300 space-y-1.5">
             <p><strong class="text-slate-200">Phím tắt nhanh:</strong> <code class="text-brand-500 font-bold font-mono">Option + Space</code> để mở thanh chat nổi tức thì trên bất kỳ ứng dụng nào.</p>
             <p><strong class="text-slate-200">Work with Apps:</strong> Nhấn biểu tượng <code class="text-accent-cyan font-mono">&lt;code/&gt;</code> trong ô chat để đính kèm ngữ cảnh file active từ Cursor hoặc Terminal mà không cần copy-paste.</p>
+          </div>
+        </div>
+
+        <!-- Tier 2 Sub-header -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-accent-cyan/10 via-surface-900 to-surface-900 border border-accent-cyan/20 flex items-center justify-between mt-8">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-accent-cyan/20 text-accent-cyan flex items-center justify-center">
+              <i data-lucide="terminal" class="w-4 h-4"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-white" data-lang-en="Tier 2: Autonomous CLI Agents & Local LLMs" data-lang-vi="Phân tầng 2: Autonomous CLI Agents & Chạy AI Cục bộ Offline">
+                Phân tầng 2: Autonomous CLI Agents & Chạy AI Cục bộ Offline
+              </h4>
+              <p class="text-xs text-slate-400" data-lang-en="Terminal-native self-healing agents, git-managed AI pair programming, and private offline inference on Apple Silicon." data-lang-vi="Agent tự động sửa lỗi và chạy test trong terminal, AI pair-programming tự động commit Git, và chạy model AI offline bảo mật.">
+                Agent tự động sửa lỗi và chạy test trong terminal, AI pair-programming tự động commit Git, và chạy model AI offline bảo mật.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4.2.1 Claude Code -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="bot" class="w-4 h-4 text-accent-cyan"></i>
+                <span data-lang-en="4.2.1. `claude-code` — Official Autonomous CLI Agent by Anthropic" data-lang-vi="4.2.1. `claude-code` — Autonomous CLI Agent Chính thức của Anthropic">4.2.1. `claude-code` — Autonomous CLI Agent Chính thức của Anthropic</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Terminal agent with agentic loop: reads codebase, writes code, executes tests (`npm test`, `pytest`), auto-fixes errors, and creates GitHub PRs." data-lang-vi="Agent dòng lệnh với vòng lặp tự chủ: đọc codebase, viết code, chạy test (`npm test`, `pytest`), tự động fix lỗi và mở GitHub PR.">
+                Agent dòng lệnh với vòng lặp tự chủ: đọc codebase, viết code, chạy test (`npm test`, `pytest`), tự động fix lỗi và mở GitHub PR.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-cyan"></i>
+              <span>Anthropic Claude Code Docs</span>
+            </a>
+          </div>
+
+          <!-- Install Command -->
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install Claude Code globally via npm</span>
+npm install -g @anthropic-ai/claude-code
+
+<span class="text-slate-500"># Launch in any project directory</span>
+cd ~/Documents/git/my-project
+claude</code></pre>
+          </div>
+
+          <!-- Slash Commands Table -->
+          <div class="space-y-2 pt-2">
+            <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300" data-lang-en="Essential Slash Commands inside Claude Code:" data-lang-vi="Các Lệnh Slash Quan trọng bên trong Claude Code:">
+              Các Lệnh Slash Quan trọng bên trong Claude Code:
+            </h5>
+            <div class="overflow-x-auto rounded-lg border border-slate-800">
+              <table class="w-full text-xs text-left">
+                <thead class="bg-surface-950 text-slate-400 border-b border-slate-800 font-mono">
+                  <tr>
+                    <th class="p-2.5">Command</th>
+                    <th class="p-2.5" data-lang-en="Action" data-lang-vi="Hành động">Hành động</th>
+                    <th class="p-2.5" data-lang-en="Benefit" data-lang-vi="Lợi ích">Lợi ích</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800/60 bg-surface-900/50">
+                  <tr>
+                    <td class="p-2.5 font-mono text-accent-cyan font-bold">/init</td>
+                    <td class="p-2.5 font-medium text-slate-200">Initialize `CLAUDE.md`</td>
+                    <td class="p-2.5 text-slate-400" data-lang-en="Auto-scans repo to capture build commands and coding standards" data-lang-vi="Tự động quét repo để ghi nhớ lệnh build và quy chuẩn code">Tự động quét repo để ghi nhớ lệnh build và quy chuẩn code</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono text-accent-purple font-bold">/compact</td>
+                    <td class="p-2.5 font-medium text-slate-200">Compact Context</td>
+                    <td class="p-2.5 text-slate-400" data-lang-en="Summarizes conversation history to save tokens and speed up thinking" data-lang-vi="Nén lịch sử hội thoại để tiết kiệm token và tăng tốc độ xử lý">Nén lịch sử hội thoại để tiết kiệm token và tăng tốc độ xử lý</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono text-brand-500 font-bold">/pr</td>
+                    <td class="p-2.5 font-medium text-slate-200">Create GitHub PR</td>
+                    <td class="p-2.5 text-slate-400" data-lang-en="Summarizes local commits and creates a Pull Request via GitHub CLI" data-lang-vi="Tự tóm tắt commit và mở Pull Request trực tiếp lên GitHub">Tự tóm tắt commit và mở Pull Request trực tiếp lên GitHub</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5 font-mono text-accent-amber font-bold">/cost</td>
+                    <td class="p-2.5 font-medium text-slate-200">View Token Spend</td>
+                    <td class="p-2.5 text-slate-400" data-lang-en="Shows exact token usage and API cost breakdown for current session" data-lang-vi="Xem chi phí token và tiền API thực tế đã tiêu thụ">Xem chi phí token và tiền API thực tế đã tiêu thụ</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4.2.2 Aider -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="git-commit" class="w-4 h-4 text-brand-500"></i>
+                <span data-lang-en="4.2.2. `aider` — AI Pair-Programming CLI with Auto Git Commits" data-lang-vi="4.2.2. `aider` — AI Pair-Programming CLI Tự động Git Commit">4.2.2. `aider` — AI Pair-Programming CLI Tự động Git Commit</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Terminal AI pair programmer that automatically creates sensible semantic Git commits and supports instant 1-second `/undo` rollback." data-lang-vi="Công cụ AI pair-programming trong terminal tự động tạo commit Git chuẩn mực sau mỗi lần sửa code và hỗ trợ lệnh `/undo` hoàn tác trong 1 giây.">
+                Công cụ AI pair-programming trong terminal tự động tạo commit Git chuẩn mực sau mỗi lần sửa code và hỗ trợ lệnh `/undo` hoàn tác trong 1 giây.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://aider.chat/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-brand-500"></i>
+              <span>Aider Official (aider.chat)</span>
+            </a>
+          </div>
+
+          <!-- Install Command -->
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install Aider via Homebrew</span>
+brew install aider
+
+<span class="text-slate-500"># Run with Claude 3.7 Sonnet</span>
+export ANTHROPIC_API_KEY="your-api-key"
+aider --model sonnet
+
+<span class="text-slate-500"># Or run with DeepSeek V3/R1 (Affordable & Super Smart)</span>
+export DEEPSEEK_API_KEY="your-api-key"
+aider --model deepseek/deepseek-chat</code></pre>
+          </div>
+
+          <div class="pt-2 text-xs text-slate-300 space-y-1.5">
+            <p><strong class="text-slate-200">Lệnh `/undo`:</strong> Gõ <code class="text-accent-rose font-mono">/undo</code> bất cứ lúc nào để hoàn tác commit Git gần nhất nếu AI sinh code chưa đúng ý.</p>
+            <p><strong class="text-slate-200">Lệnh `/test`:</strong> Gõ <code class="text-brand-500 font-mono">/test npm test</code> để AI tự động chạy test suite và tự sửa code cho đến khi pass.</p>
+          </div>
+        </div>
+
+        <!-- 4.2.3 Ollama -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="cpu" class="w-4 h-4 text-accent-purple"></i>
+                <span data-lang-en="4.2.3. `ollama` — Run Local LLMs at Apple Silicon Speed" data-lang-vi="4.2.3. `ollama` — Chạy LLM Cục bộ Siêu tốc trên Chip Apple Silicon">4.2.3. `ollama` — Chạy LLM Cục bộ Siêu tốc trên Chip Apple Silicon</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Leverage Apple Silicon Unified Memory for 100% private, zero-cost, offline AI inference. Exposes local OpenAI API at `http://localhost:11434/v1`." data-lang-vi="Tận dụng băng thông Unified Memory của chip Apple Silicon để chạy AI 100% offline, miễn phí, bảo mật tuyệt đối. Cung cấp API tại `http://localhost:11434/v1`.">
+                Tận dụng băng thông Unified Memory của chip Apple Silicon để chạy AI 100% offline, miễn phí, bảo mật tuyệt đối. Cung cấp API tại `http://localhost:11434/v1`.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://ollama.com/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-purple"></i>
+              <span>Ollama Official (ollama.com)</span>
+            </a>
+          </div>
+
+          <!-- Install Command -->
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install Ollama via Homebrew</span>
+brew install --cask ollama
+
+<span class="text-slate-500"># Download & Run Qwen 2.5 Coder (Top #1 Open-Source Coding Model)</span>
+ollama run qwen2.5-coder:7b
+
+<span class="text-slate-500"># Or run DeepSeek R1 Reasoning Model</span>
+ollama run deepseek-r1:8b</code></pre>
+          </div>
+        </div>
+
+        <!-- 4.2.4 LM Studio -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="sparkles" class="w-4 h-4 text-accent-amber"></i>
+                <span data-lang-en="4.2.4. `lm-studio` — GUI Model Explorer & Local API Server" data-lang-vi="4.2.4. `lm-studio` — Giao diện Khám phá Model HuggingFace & Local API Server">4.2.4. `lm-studio` — Giao diện Khám phá Model HuggingFace & Local API Server</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Visual GUI to discover, download Hugging Face GGUF models, auto-allocate GPU Metal layers, and start local OpenAI-compatible server in 1 click." data-lang-vi="Giao diện đồ hoạ trực quan để tải model GGUF từ Hugging Face, tự động tối ưu GPU Metal và bật Local API Server chỉ với 1 click.">
+                Giao diện đồ hoạ trực quan để tải model GGUF từ Hugging Face, tự động tối ưu GPU Metal và bật Local API Server chỉ với 1 click.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://lmstudio.ai/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-amber"></i>
+              <span>LM Studio Official (lmstudio.ai)</span>
+            </a>
+          </div>
+
+          <!-- Install Command -->
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install LM Studio GUI</span>
+brew install --cask lm-studio</code></pre>
           </div>
         </div>
       </section>
