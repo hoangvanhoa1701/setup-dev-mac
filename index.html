@@ -146,11 +146,12 @@
               </span>
               <i data-lucide="check" class="w-4 h-4 text-accent-rose"></i>
             </a>
-            <a href="#phase-5" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-50">
+            <a href="#phase-5" class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-800/80 text-accent-cyan font-medium border border-accent-cyan/20">
               <span class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono">5</span>
+                <span class="w-5 h-5 rounded-md bg-accent-cyan/20 text-accent-cyan flex items-center justify-center text-xs font-mono">5</span>
                 <span data-lang-en="Terminal & Git Workflow" data-lang-vi="Terminal & Git Pro">Terminal & Git Pro</span>
               </span>
+              <i data-lucide="check" class="w-4 h-4 text-accent-cyan"></i>
             </a>
             <a href="#phase-6" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-40">
               <span class="flex items-center gap-2">
@@ -1626,6 +1627,211 @@ cat << 'EOF' > .cursorrules
 ## Testing & Verification
 - Verify behavior before reporting done: run project tests or smoke test CLI/endpoints.
 EOF</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- PHASE 5: Terminal & Git Workflow -->
+      <section id="phase-5" class="space-y-6">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+          <div class="flex items-center space-x-3">
+            <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-accent-cyan/20 text-accent-cyan font-mono font-bold text-sm border border-accent-cyan/30">05</span>
+            <div>
+              <h3 class="text-xl font-bold text-white flex items-center gap-2" data-lang-en="Phase 5: Professional Terminal & Git Workflow" data-lang-vi="Giai đoạn 5: Terminal & Quy trình Git Chuyên nghiệp">
+                <span>Giai đoạn 5: Terminal & Quy trình Git Chuyên nghiệp</span>
+              </h3>
+              <p class="text-xs text-slate-400" data-lang-en="GPU-accelerated Ghostty terminal, SSH Ed25519 with Keychain, verified commit signing, and smart Git aliases." data-lang-vi="Terminal Ghostty tăng tốc GPU, khoá SSH Ed25519 lưu Keychain, ký commit Verified và bộ alias Git siêu tốc.">
+                Terminal Ghostty tăng tốc GPU, khoá SSH Ed25519 lưu Keychain, ký commit Verified và bộ alias Git siêu tốc.
+              </p>
+            </div>
+          </div>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20 font-medium" data-lang-en="Terminal & Git" data-lang-vi="Terminal & Git">
+            Terminal & Git
+          </span>
+        </div>
+
+        <!-- 5.1 Ghostty Terminal -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="terminal-square" class="w-4 h-4 text-accent-cyan"></i>
+                <span data-lang-en="5.1. Ghostty — The Modern GPU-Accelerated Terminal" data-lang-vi="5.1. Ghostty — Terminal Thế Hệ Mới Tăng Tốc Bằng GPU">5.1. Ghostty — Terminal Thế Hệ Mới Tăng Tốc Bằng GPU</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Crafted by Mitchell Hashimoto with native macOS SwiftUI & Metal rendering: 120 FPS, zero input lag, font ligatures, and tabs/splits." data-lang-vi="Phát triển bởi Mitchell Hashimoto với giao diện SwiftUI native và Metal GPU: mượt 120 FPS, không độ trễ gõ phím, font ligatures và chia tab cực nhẹ.">
+                Phát triển bởi Mitchell Hashimoto với giao diện SwiftUI native và Metal GPU: mượt 120 FPS, không độ trễ gõ phím, font ligatures và chia tab cực nhẹ.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://ghostty.org/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-cyan"></i>
+              <span>Ghostty Official (ghostty.org)</span>
+            </a>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install Ghostty Terminal</span>
+brew install --cask ghostty</code></pre>
+          </div>
+        </div>
+
+        <!-- 5.2 SSH Ed25519 & Keychain -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="key" class="w-4 h-4 text-accent-purple"></i>
+                <span data-lang-en="5.2. Modern SSH Ed25519 Key & macOS Keychain Integration" data-lang-vi="5.2. Tạo Khóa SSH Ed25519 & Tích Hợp macOS Keychain">5.2. Tạo Khóa SSH Ed25519 & Tích Hợp macOS Keychain</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Generate high-security Ed25519 SSH keys and auto-store passphrase in macOS Keychain (no password prompt on git push)." data-lang-vi="Tạo khoá SSH Ed25519 bảo mật cao và tự động lưu mật khẩu vào macOS Keychain (không phải nhập lại pass mỗi lần push code).">
+                Tạo khoá SSH Ed25519 bảo mật cao và tự động lưu mật khẩu vào macOS Keychain (không phải nhập lại pass mỗi lần push code).
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># 1. Generate Ed25519 SSH Key</span>
+ssh-keygen -t ed25519 -C "hoangvanhoa1701@gmail.com"
+
+<span class="text-slate-500"># 2. Configure SSH to auto-load key into macOS Keychain</span>
+mkdir -p ~/.ssh
+cat << 'EOF' >> ~/.ssh/config
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_ed25519
+EOF
+
+<span class="text-slate-500"># 3. Copy public key to clipboard to paste into GitHub Settings -> SSH Keys</span>
+pbcopy < ~/.ssh/id_ed25519.pub</code></pre>
+          </div>
+        </div>
+
+        <!-- 5.3 Git Global Config & Smart Aliases -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="git-branch" class="w-4 h-4 text-brand-500"></i>
+                <span data-lang-en="5.3. Global Git Configuration & Smart Productivity Aliases" data-lang-vi="5.3. Cấu hình Git Global & Bộ Alias Siêu Tốc">5.3. Cấu hình Git Global & Bộ Alias Siêu Tốc</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Standardize identity, default branch to `main`, enable pull rebase, and add high-speed aliases." data-lang-vi="Chuẩn hoá thông tin tác giả, nhánh mặc định `main`, kích hoạt pull rebase chống merge commit rác và bộ alias tiện lợi.">
+                Chuẩn hoá thông tin tác giả, nhánh mặc định `main`, kích hoạt pull rebase chống merge commit rác và bộ alias tiện lợi.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Set identity and modern defaults</span>
+git config --global user.name "Hoang Hoa"
+git config --global user.email "hoangvanhoa1701@gmail.com"
+git config --global init.defaultBranch main
+git config --global pull.rebase true
+
+<span class="text-slate-500"># Setup Supercharged Aliases</span>
+git config --global alias.st "status -sb"
+git config --global alias.co "checkout"
+git config --global alias.br "branch"
+git config --global alias.cm "commit -m"
+git config --global alias.lg "log --graph --oneline --decorate --all"
+git config --global alias.undo "reset --soft HEAD~1"</code></pre>
+          </div>
+        </div>
+
+        <!-- 5.4 SSH Commit Signing (Verified Badge) -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-4 h-4 text-accent-amber"></i>
+                <span data-lang-en="5.4. SSH Commit Signing (GitHub Green 'Verified' Badge)" data-lang-vi="5.4. Ký Commit Bằng Khóa SSH (Huy hiệu 'Verified' Xanh trên GitHub)">5.4. Ký Commit Bằng Khóa SSH (Huy hiệu 'Verified' Xanh trên GitHub)</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Use your existing SSH key to sign Git commits automatically without cumbersome GPG tools." data-lang-vi="Dùng trực tiếp khoá SSH có sẵn để tự động ký commit mà không cần cài đặt GPG phức tạp.">
+                Dùng trực tiếp khoá SSH có sẵn để tự động ký commit mà không cần cài đặt GPG phức tạp.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Configure Git to sign commits with SSH key</span>
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
+git config --global commit.gpgsign true</code></pre>
+          </div>
+        </div>
+
+        <!-- 5.5 Global .gitignore -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="file-x" class="w-4 h-4 text-accent-rose"></i>
+                <span data-lang-en="5.5. Global `.gitignore` (Prevent macOS Junk & Leakage)" data-lang-vi="5.5. Cấu hình `.gitignore_global` Chặn Rác Toàn Hệ Thống">5.5. Cấu hình `.gitignore_global` Chặn Rác Toàn Hệ Thống</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Globally ignore `.DS_Store`, `._*`, and `.env.local` across all repositories on your Mac." data-lang-vi="Chặn vĩnh viễn rác `.DS_Store`, `._*` và file nhạy cảm `.env.local` không bị lọt vào bất kỳ repo nào.">
+                Chặn vĩnh viễn rác `.DS_Store`, `._*` và file nhạy cảm `.env.local` không bị lọt vào bất kỳ repo nào.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Create global ignore file</span>
+cat << 'EOF' > ~/.gitignore_global
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+*.swp
+*~
+.env.local
+EOF
+
+<span class="text-slate-500"># Register global excludesfile in Git</span>
+git config --global core.excludesfile ~/.gitignore_global</code></pre>
           </div>
         </div>
       </section>
