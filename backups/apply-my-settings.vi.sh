@@ -12,11 +12,12 @@ osascript -e 'tell application "System Settings" to quit' 2>/dev/null || true
 osascript -e 'tell application "System Preferences" to quit' 2>/dev/null || true
 
 echo "⚙️  Đang cấu hình: Bàn phím & Tốc độ gõ..."
-defaults write -g "InitialKeyRepeat" -float 25
+defaults write -g "InitialKeyRepeat" -int 15
 defaults write -g "KeyRepeat" -float 2
+defaults write -g "ApplePressAndHoldEnabled" -bool false
 defaults write -g "NSAutomaticSpellingCorrectionEnabled" -bool false
 defaults write -g "NSAutomaticCapitalizationEnabled" -bool false
-defaults write -g "NSAutomaticPeriodSubstitutionEnabled" -bool true
+defaults write -g "NSAutomaticPeriodSubstitutionEnabled" -bool false
 
 echo "⚙️  Đang cấu hình: Trackpad Cử chỉ & Cảm ứng..."
 defaults write com.apple.AppleMultitouchTrackpad "Clicking" -bool true
@@ -49,8 +50,12 @@ defaults write -g "com.apple.mouse.scaling" -float 3
 defaults write -g "com.apple.scrollwheel.scaling" -float 1
 
 echo "⚙️  Đang cấu hình: Cấu hình Finder..."
+defaults write com.apple.finder "ShowPathbar" -bool true
+defaults write com.apple.finder "ShowStatusBar" -bool true
+defaults write com.apple.finder "_FXSortFoldersFirst" -bool true
 
 echo "⚙️  Đang cấu hình: Hiển thị phần mở rộng file..."
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool true
 
 echo "⚙️  Đang cấu hình: Cấu hình Dock & Mission Control..."
 defaults write com.apple.dock "autohide" -bool false
