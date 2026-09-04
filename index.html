@@ -1475,32 +1475,35 @@ brew install --cask lm-studio</code></pre>
         </div>
 
         <!-- Tier 3 Sub-header -->
-        <div class="p-4 rounded-xl bg-gradient-to-r from-accent-purple/10 via-surface-900 to-surface-900 border border-accent-purple/20 flex items-center justify-between mt-8">
-          <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded-lg bg-accent-purple/20 text-accent-purple flex items-center justify-center">
-              <i data-lucide="network" class="w-4 h-4"></i>
+        <div class="p-5 rounded-xl bg-gradient-to-r from-accent-purple/20 via-surface-900 to-surface-900 border border-accent-purple/30 flex flex-col md:flex-row md:items-center justify-between gap-4 mt-8">
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-xl bg-accent-purple/20 text-accent-purple flex items-center justify-center shrink-0">
+              <i data-lucide="network" class="w-5 h-5"></i>
             </div>
             <div>
-              <h4 class="text-sm font-bold text-white" data-lang-en="Tier 3: Advanced Agentic Infrastructure & Rules (Power User)" data-lang-vi="Phân tầng 3: Hạ tầng Agentic Nâng cao & Cấu hình Chuẩn (Power User)">
-                Phân tầng 3: Hạ tầng Agentic Nâng cao & Cấu hình Chuẩn (Power User)
+              <h4 class="text-base font-bold text-white flex items-center gap-2" data-lang-en="Tier 3: Advanced Agentic Infrastructure & Multi-Model Gateway (Power User)" data-lang-vi="Phân tầng 3: Hạ tầng Agentic Nâng cao & Cổng Định tuyến Đa Model (Power User)">
+                <span>Phân tầng 3: Hạ tầng Agentic Nâng cao & Cổng Định tuyến Đa Model (Power User)</span>
               </h4>
-              <p class="text-xs text-slate-400" data-lang-en="Multi-provider AI gateways, persistent execution harnesses, multi-worktree orchestration, and prompt rules." data-lang-vi="Cổng định tuyến AI Gateway đa nhà cung cấp, khung điều phối agentic harness, chạy song song nhiều worktree và file rules chuẩn.">
-                Cổng định tuyến AI Gateway đa nhà cung cấp, khung điều phối agentic harness, chạy song song nhiều worktree và file rules chuẩn.
+              <p class="text-xs text-slate-300 mt-1 leading-relaxed" data-lang-en="Production-grade AI gateway with auto-failover, persistent execution harnesses, multi-worktree orchestration, and client wiring for Claude Code, Codex, OMP, Cursor, Zed, and VS Code." data-lang-vi="Cổng định tuyến AI Gateway tự động chuyển tuyến fallback, khung điều phối agentic harness, chạy song song nhiều worktree và công thức đấu nối chi tiết cho Claude Code, Codex, OMP, Cursor, Zed, và VS Code.">
+                Cổng định tuyến AI Gateway tự động chuyển tuyến fallback, khung điều phối agentic harness, chạy song song nhiều worktree và công thức đấu nối chi tiết cho Claude Code, Codex, OMP, Cursor, Zed, và VS Code.
               </p>
             </div>
           </div>
+          <span class="text-xs px-3 py-1 rounded-full bg-accent-purple/20 text-accent-purple border border-accent-purple/30 font-mono font-semibold self-start md:self-auto">
+            Enterprise Grade
+          </span>
         </div>
 
-        <!-- 4.3.1 omniroute -->
-        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+        <!-- 4.3.1 omniroute Core & Configuration -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-5 hover:border-slate-700 transition">
           <div class="flex items-start justify-between">
             <div>
               <h4 class="text-base font-semibold text-white flex items-center gap-2">
                 <i data-lucide="route" class="w-4 h-4 text-accent-cyan"></i>
-                <span data-lang-en="4.3.1. `omniroute` — Unified Multi-Provider AI Model Gateway" data-lang-vi="4.3.1. `omniroute` — Cổng Định tuyến AI Gateway Đa Nhà Cung Cấp">4.3.1. `omniroute` — Cổng Định tuyến AI Gateway Đa Nhà Cung Cấp</span>
+                <span data-lang-en="4.3.1. `omniroute` — Unified AI Model Gateway & Intelligent Failover" data-lang-vi="4.3.1. `omniroute` — Cổng AI Gateway & Router Đa Model Thông Minh">4.3.1. `omniroute` — Cổng AI Gateway & Router Đa Model Thông Minh</span>
               </h4>
-              <p class="text-xs text-slate-400 mt-1" data-lang-en="Consolidate Anthropic, OpenAI, Gemini, DeepSeek, and local Ollama into a single `http://localhost:8000/v1` endpoint with automatic rate-limit fallback." data-lang-vi="Gom toàn bộ các nhà cung cấp AI về 1 endpoint duy nhất chuẩn OpenAI, tự động chuyển tuyến fallback khi model gặp sự cố hoặc hết quota.">
-                Gom toàn bộ các nhà cung cấp AI về 1 endpoint duy nhất chuẩn OpenAI, tự động chuyển tuyến fallback khi model gặp sự cố hoặc hết quota.
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Acts as a local reverse proxy (`http://localhost:8000/v1`). Automatically reroutes to backup models (DeepSeek, Gemini) if Claude 3.7 hits rate limits or network downtime." data-lang-vi="Đóng vai trò là Reverse Proxy chuẩn OpenAI (`http://localhost:8000/v1`). Tự động chuyển tuyến sang model dự phòng (DeepSeek, Gemini) khi Claude 3.7 bị nghẽn mạng hoặc quá tải.">
+                Đóng vai trò là Reverse Proxy chuẩn OpenAI (`http://localhost:8000/v1`). Tự động chuyển tuyến sang model dự phòng (DeepSeek, Gemini) khi Claude 3.7 bị nghẽn mạng hoặc quá tải.
               </p>
             </div>
             <label class="flex items-center gap-2 cursor-pointer">
@@ -1515,24 +1518,280 @@ brew install --cask lm-studio</code></pre>
               <i data-lucide="copy" class="w-3.5 h-3.5"></i>
               <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
             </button>
-            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install & Launch omniroute gateway</span>
-npm install -g omniroute || brew install omniroute
-omniroute start --port 8000
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install omniroute CLI globally</span>
+npm install -g omniroute || brew install omniroute</code></pre>
+          </div>
 
-<span class="text-slate-500"># Point Cursor / Zed / Aider OpenAI Base URL to: http://localhost:8000/v1</span></code></pre>
+          <!-- Complete YAML Config File -->
+          <div class="space-y-2 pt-2">
+            <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5" data-lang-en="Production Config (`~/.config/omniroute/config.yaml`):" data-lang-vi="File Cấu hình Chuẩn (`~/.config/omniroute/config.yaml`):">
+              File Cấu hình Chuẩn (`~/.config/omniroute/config.yaml`):
+            </h5>
+            <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+              <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+              </button>
+              <pre class="overflow-x-auto pr-20"><code>mkdir -p ~/.config/omniroute
+cat << 'EOF' > ~/.config/omniroute/config.yaml
+server:
+  host: "127.0.0.1"
+  port: 8000
+  api_key: "sk-omniroute-master-key" # Token bảo mật gateway nội bộ
+
+providers:
+  anthropic:
+    api_key: "${ANTHROPIC_API_KEY}"
+    base_url: "https://api.anthropic.com/v1"
+  openai:
+    api_key: "${OPENAI_API_KEY}"
+    base_url: "https://api.openai.com/v1"
+  deepseek:
+    api_key: "${DEEPSEEK_API_KEY}"
+    base_url: "https://api.deepseek.com/v1"
+  google:
+    api_key: "${GEMINI_API_KEY}"
+    base_url: "https://generativelanguage.googleapis.com/v1beta/openai"
+  ollama_local:
+    base_url: "http://127.0.0.1:11434/v1"
+    api_key: "ollama"
+
+routes:
+  # 1. Model Code Chính (Claude 3.7 -> Fallback DeepSeek V3 -> Gemini 2.5 Pro)
+  vibe-coder:
+    fallback_chain:
+      - provider: anthropic
+        model: "claude-3-7-sonnet-20250219"
+        timeout_ms: 20000
+      - provider: deepseek
+        model: "deepseek-chat"
+        timeout_ms: 15000
+      - provider: google
+        model: "gemini-2.5-pro"
+
+  # 2. Model Suy luận Toán & Logic Nặng (Claude Thinking -> DeepSeek R1)
+  vibe-reasoning:
+    fallback_chain:
+      - provider: anthropic
+        model: "claude-3-7-sonnet-20250219"
+        thinking: true
+      - provider: deepseek
+        model: "deepseek-reasoner"
+
+  # 3. Model Đọc File & Quét Repo Siêu Tốc (DeepSeek V3 -> Qwen Local)
+  vibe-fast:
+    fallback_chain:
+      - provider: deepseek
+        model: "deepseek-chat"
+      - provider: ollama_local
+        model: "qwen2.5-coder:7b"
+EOF</code></pre>
+            </div>
+          </div>
+
+          <!-- macOS Auto-Start Daemon (Launchd) -->
+          <div class="space-y-2 pt-2">
+            <h5 class="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-1.5" data-lang-en="Auto-Start on Boot (`launchd` Daemon):" data-lang-vi="Tự Động Khởi Chạy Khi Bật Máy (`launchd` Daemon):">
+              Tự Động Khởi Chạy Khi Bật Máy (`launchd` Daemon):
+            </h5>
+            <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+              <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+              </button>
+              <pre class="overflow-x-auto pr-20"><code>mkdir -p ~/Library/LaunchAgents
+cat << 'EOF' > ~/Library/LaunchAgents/com.vibe.omniroute.plist
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.vibe.omniroute</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/node</string>
+        <string>/opt/homebrew/bin/omniroute</string>
+        <string>start</string>
+        <string>--port</string>
+        <string>8000</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+</dict>
+</plist>
+EOF
+launchctl load ~/Library/LaunchAgents/com.vibe.omniroute.plist</code></pre>
+            </div>
           </div>
         </div>
 
-        <!-- 4.3.2 omp -->
+        <!-- 4.3.2 Exact Client Wiring Recipes -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-6 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="plug-zap" class="w-4 h-4 text-accent-amber"></i>
+                <span data-lang-en="4.3.2. Complete Client Wiring Recipes (Base URL, Tokens & Model Selection)" data-lang-vi="4.3.2. Cẩm Nang Đấu Nối Từng Ứng Dụng vào OmniRoute Gateway">4.3.2. Cẩm Nang Đấu Nối Từng Ứng Dụng vào OmniRoute Gateway</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Exact setup recipes for Claude Code, OMP Harness, Codex SDK, Cursor, Zed, and VS Code/Copilot to call models via `http://localhost:8000/v1`." data-lang-vi="Hướng dẫn chi tiết từng bước cấu hình Claude Code, OMP Harness, Codex SDK, Cursor, Zed, và VS Code/Copilot kết nối qua `http://localhost:8000/v1`.">
+                Hướng dẫn chi tiết từng bước cấu hình Claude Code, OMP Harness, Codex SDK, Cursor, Zed, và VS Code/Copilot kết nối qua `http://localhost:8000/v1`.
+              </p>
+            </div>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-accent-amber/10 text-accent-amber border border-accent-amber/20 font-mono">Integration Matrix</span>
+          </div>
+
+          <!-- 1. Claude Code CLI Wiring -->
+          <div class="space-y-2 p-4 rounded-lg bg-surface-950/80 border border-slate-800">
+            <div class="flex items-center gap-2 font-bold text-accent-cyan text-xs">
+              <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+              <span>1. Claude Code CLI (`claude-code`)</span>
+            </div>
+            <p class="text-xs text-slate-400" data-lang-en="Configure Claude Code to send all reasoning requests through OmniRoute Gateway:" data-lang-vi="Thiết lập Claude Code gửi toàn bộ yêu cầu qua cổng OmniRoute Gateway:">
+              Thiết lập Claude Code gửi toàn bộ yêu cầu qua cổng OmniRoute Gateway:
+            </p>
+            <div class="relative bg-surface-900 rounded p-3 font-mono text-xs text-slate-200 border border-slate-800">
+              <button onclick="copyCode(this)" class="absolute top-2.5 right-2.5 flex items-center gap-1 px-2 py-0.5 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                <span class="copy-label">Sao chép</span>
+              </button>
+              <pre class="overflow-x-auto pr-16"><code><span class="text-slate-500"># Run Claude Code with OmniRoute Base URL & Master Token</span>
+export ANTHROPIC_BASE_URL="http://localhost:8000/v1"
+export ANTHROPIC_API_KEY="sk-omniroute-master-key"
+export ANTHROPIC_MODEL="vibe-coder"
+claude</code></pre>
+            </div>
+          </div>
+
+          <!-- 2. OMP Harness Wiring -->
+          <div class="space-y-2 p-4 rounded-lg bg-surface-950/80 border border-slate-800">
+            <div class="flex items-center gap-2 font-bold text-brand-500 text-xs">
+              <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+              <span>2. `omp` (Oh My Pi Agentic Harness) — `~/.omp/config.json`</span>
+            </div>
+            <p class="text-xs text-slate-400" data-lang-en="Assign fast models to scout and powerful models to main reasoning in OMP:" data-lang-vi="Cấp phát model nhanh cho subagent scout và model mạnh cho agent chính trong OMP:">
+              Cấp phát model nhanh cho subagent scout và model mạnh cho agent chính trong OMP:
+            </p>
+            <div class="relative bg-surface-900 rounded p-3 font-mono text-xs text-slate-200 border border-slate-800">
+              <button onclick="copyCode(this)" class="absolute top-2.5 right-2.5 flex items-center gap-1 px-2 py-0.5 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                <span class="copy-label">Sao chép</span>
+              </button>
+              <pre class="overflow-x-auto pr-16"><code>mkdir -p ~/.omp
+cat << 'EOF' > ~/.omp/config.json
+{
+  "gateway": {
+    "base_url": "http://localhost:8000/v1",
+    "api_key": "sk-omniroute-master-key"
+  },
+  "models": {
+    "default": "vibe-coder",
+    "reasoning": "vibe-reasoning",
+    "scout": "vibe-fast",
+    "reviewer": "vibe-coder"
+  }
+}
+EOF</code></pre>
+            </div>
+          </div>
+
+          <!-- 3. Codex SDK Wiring (TypeScript & Python) -->
+          <div class="space-y-2 p-4 rounded-lg bg-surface-950/80 border border-slate-800">
+            <div class="flex items-center gap-2 font-bold text-accent-purple text-xs">
+              <i data-lucide="code" class="w-3.5 h-3.5"></i>
+              <span>3. Codex SDK (`@cursor/sdk` TypeScript / Python)</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div class="relative bg-surface-900 rounded p-3 font-mono text-xs text-slate-200 border border-slate-800">
+                <div class="text-[10px] text-slate-500 font-bold uppercase mb-1">TypeScript SDK</div>
+                <pre class="overflow-x-auto"><code>import { Agent } from "@cursor/sdk";
+
+const agent = new Agent({
+  baseURL: "http://localhost:8000/v1",
+  apiKey: "sk-omniroute-master-key",
+  model: "vibe-coder"
+});</code></pre>
+              </div>
+              <div class="relative bg-surface-900 rounded p-3 font-mono text-xs text-slate-200 border border-slate-800">
+                <div class="text-[10px] text-slate-500 font-bold uppercase mb-1">Python SDK / OpenAI</div>
+                <pre class="overflow-x-auto"><code>from openai import OpenAI
+
+client = OpenAI(
+  base_url="http://localhost:8000/v1",
+  api_key="sk-omniroute-master-key"
+)
+res = client.chat.completions.create(
+  model="vibe-coder", messages=[...]
+)</code></pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Cursor & Zed Editor Wiring -->
+          <div class="space-y-2 p-4 rounded-lg bg-surface-950/80 border border-slate-800">
+            <div class="flex items-center gap-2 font-bold text-accent-rose text-xs">
+              <i data-lucide="layout" class="w-3.5 h-3.5"></i>
+              <span>4. Cursor & Zed Editors</span>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-slate-300">
+              <div class="p-3 bg-surface-900 rounded border border-slate-800 space-y-1.5">
+                <strong class="text-white">Cursor (`Cmd + ,` > Models):</strong>
+                <p>• <strong>OpenAI Base URL:</strong> <code class="text-brand-500 font-mono">http://localhost:8000/v1</code></p>
+                <p>• <strong>OpenAI Key:</strong> <code class="text-brand-500 font-mono">sk-omniroute-master-key</code></p>
+                <p>• <strong>Add Custom Models:</strong> <code class="text-accent-cyan font-mono">vibe-coder</code>, <code class="text-accent-purple font-mono">vibe-reasoning</code>, <code class="text-accent-amber font-mono">vibe-fast</code></p>
+              </div>
+              <div class="p-3 bg-surface-900 rounded border border-slate-800 space-y-1.5">
+                <strong class="text-white">Zed (`~/.config/zed/settings.json`):</strong>
+                <p>• <strong>Provider:</strong> <code class="text-brand-500 font-mono">"openai"</code></p>
+                <p>• <strong>api_url:</strong> <code class="text-brand-500 font-mono">"http://localhost:8000/v1"</code></p>
+                <p>• <strong>api_key:</strong> <code class="text-brand-500 font-mono">"sk-omniroute-master-key"</code></p>
+                <p>• <strong>default_model:</strong> <code class="text-accent-cyan font-mono">"vibe-coder"</code></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5. VS Code & GitHub Copilot Wiring -->
+          <div class="space-y-2 p-4 rounded-lg bg-surface-950/80 border border-slate-800">
+            <div class="flex items-center gap-2 font-bold text-accent-cyan text-xs">
+              <i data-lucide="file-code" class="w-3.5 h-3.5"></i>
+              <span>5. Visual Studio Code & GitHub Copilot / Continue.dev</span>
+            </div>
+            <p class="text-xs text-slate-400" data-lang-en="Route GitHub Copilot, Continue.dev, or Cline in VS Code directly to OmniRoute:" data-lang-vi="Chuyển tiếp GitHub Copilot, Continue.dev, hoặc Cline trong VS Code về OmniRoute:">
+              Chuyển tiếp GitHub Copilot, Continue.dev, hoặc Cline trong VS Code về OmniRoute:
+            </p>
+            <div class="relative bg-surface-900 rounded p-3 font-mono text-xs text-slate-200 border border-slate-800">
+              <button onclick="copyCode(this)" class="absolute top-2.5 right-2.5 flex items-center gap-1 px-2 py-0.5 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                <span class="copy-label">Sao chép</span>
+              </button>
+              <pre class="overflow-x-auto pr-16"><code><span class="text-slate-500"># Add to VS Code settings.json (`Cmd + Shift + P` > Open User Settings JSON)</span>
+{
+  "github.copilot.advanced": {
+    "debug.overrideEngine": "vibe-coder",
+    "debug.overrideProxyUrl": "http://localhost:8000/v1"
+  },
+  "github.copilot.chat.models": {
+    "provider": "openai",
+    "baseUrl": "http://localhost:8000/v1",
+    "apiKey": "sk-omniroute-master-key",
+    "model": "vibe-coder"
+  }
+}</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4.3.3 omp Deep Architecture -->
         <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
           <div class="flex items-start justify-between">
             <div>
               <h4 class="text-base font-semibold text-white flex items-center gap-2">
                 <i data-lucide="layers" class="w-4 h-4 text-brand-500"></i>
-                <span data-lang-en="4.3.2. `omp` (Oh My Pi) — Autonomous Agentic Coding Harness" data-lang-vi="4.3.2. `omp` (Oh My Pi) — Khung Điều Phối Agentic Coding Harness">4.3.2. `omp` (Oh My Pi) — Khung Điều Phối Agentic Coding Harness</span>
+                <span data-lang-en="4.3.3. `omp` (Oh My Pi) — Autonomous Agentic Coding Harness Architecture" data-lang-vi="4.3.3. `omp` (Oh My Pi) — Kiến Trúc Khung Điều Phối Agentic Harness">4.3.3. `omp` (Oh My Pi) — Kiến Trúc Khung Điều Phối Agentic Harness</span>
               </h4>
-              <p class="text-xs text-slate-400 mt-1" data-lang-en="Agent harness with persistent execution kernel (Python/JS/Bun), specialized subagents (`scout`, `reviewer`, `security-reviewer`), and peer messaging hub." data-lang-vi="Khung thực thi agent chuyên biệt với persistent kernel, hệ thống subagent chuyên trách và kênh giao tiếp peer-to-peer hub.">
-                Khung thực thi agent chuyên biệt với persistent kernel, hệ thống subagent chuyên trách và kênh giao tiếp peer-to-peer hub.
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Persistent Python/Bun VM execution kernel, specialized subagent matrix (`scout`, `reviewer`, `security-reviewer`), and AST devices (`xd://ast_edit`, `xd://lsp`)." data-lang-vi="Persistent kernel duy trì bộ nhớ liên tục giữa các turn, ma trận subagent chuyên trách và thiết bị công cụ AST chuẩn xác.">
+                Persistent kernel duy trì bộ nhớ liên tục giữa các turn, ma trận subagent chuyên trách và thiết bị công cụ AST chuẩn xác.
               </p>
             </div>
             <label class="flex items-center gap-2 cursor-pointer">
@@ -1541,30 +1800,57 @@ omniroute start --port 8000
             </label>
           </div>
 
-          <!-- Install Command -->
-          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
-            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
-              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
-            </button>
-            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install omp CLI globally</span>
-npm install -g @omp/cli
-
-<span class="text-slate-500"># Run autonomous coding workflow with specialized subagents</span>
-omp task "Investigate worker pool performance and benchmark throughput"</code></pre>
+          <!-- Subagents Capabilities Table -->
+          <div class="overflow-x-auto rounded-lg border border-slate-800">
+            <table class="w-full text-xs text-left">
+              <thead class="bg-surface-950 text-slate-400 border-b border-slate-800 font-mono">
+                <tr>
+                  <th class="p-2.5">Subagent</th>
+                  <th class="p-2.5" data-lang-en="Specialty" data-lang-vi="Chuyên môn">Chuyên môn</th>
+                  <th class="p-2.5" data-lang-en="Model Tier" data-lang-vi="Phân tầng Model">Phân tầng Model</th>
+                  <th class="p-2.5" data-lang-en="Key Tools" data-lang-vi="Công cụ Lõi">Công cụ Lõi</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-800/60 bg-surface-900/50">
+                <tr>
+                  <td class="p-2.5 font-mono text-accent-cyan font-bold">scout</td>
+                  <td class="p-2.5 text-slate-300" data-lang-en="Read-only rapid codebase exploration & compressed context handoff" data-lang-vi="Đọc nhanh kiến trúc repo, quét pattern không tốn token reasoning">Đọc nhanh kiến trúc repo, quét pattern không tốn token reasoning</td>
+                  <td class="p-2.5 font-mono text-accent-amber">vibe-fast</td>
+                  <td class="p-2.5 font-mono text-slate-400">read, grep, glob</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-mono text-brand-500 font-bold">task (main)</td>
+                  <td class="p-2.5 text-slate-300" data-lang-en="End-to-end autonomous implementation, multi-file code generation & testing" data-lang-vi="Thực thi code đa file, giải quyết trọn vẹn logic và chạy test">Thực thi code đa file, giải quyết trọn vẹn logic và chạy test</td>
+                  <td class="p-2.5 font-mono text-accent-cyan">vibe-coder</td>
+                  <td class="p-2.5 font-mono text-slate-400">eval, edit, bash, xd://</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-mono text-accent-purple font-bold">reviewer</td>
+                  <td class="p-2.5 text-slate-300" data-lang-en="Quality & security review, edge cases, invariant validation" data-lang-vi="Phản biện chất lượng code, kiểm tra edge cases và logic invariants">Phản biện chất lượng code, kiểm tra edge cases và logic invariants</td>
+                  <td class="p-2.5 font-mono text-accent-cyan">vibe-coder</td>
+                  <td class="p-2.5 font-mono text-slate-400">lsp, read, diff</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-mono text-accent-rose font-bold">security-reviewer</td>
+                  <td class="p-2.5 text-slate-300" data-lang-en="Vulnerability discovery, credential leak checks, injection vector defense" data-lang-vi="Quét lỗ hổng bảo mật, rò rỉ credential, SQL/Command injection">Quét lỗ hổng bảo mật, rò rỉ credential, SQL/Command injection</td>
+                  <td class="p-2.5 font-mono text-accent-rose">vibe-reasoning</td>
+                  <td class="p-2.5 font-mono text-slate-400">grep, eval, lsp</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
-        <!-- 4.3.3 herdr -->
+        <!-- 4.3.4 herdr Multi-Worktree Orchestrator -->
         <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
           <div class="flex items-start justify-between">
             <div>
               <h4 class="text-base font-semibold text-white flex items-center gap-2">
                 <i data-lucide="git-fork" class="w-4 h-4 text-accent-purple"></i>
-                <span data-lang-en="4.3.3. `herdr` — Multi-Agent Worktree Orchestrator" data-lang-vi="4.3.3. `herdr` — Điều Phối Nhiều Agent trên Multi-Worktree">4.3.3. `herdr` — Điều Phối Nhiều Agent trên Multi-Worktree</span>
+                <span data-lang-en="4.3.4. `herdr` — Multi-Agent Worktree Orchestration" data-lang-vi="4.3.4. `herdr` — Điều Phối Nhiều Agent trên Multi-Worktree Độc Lập">4.3.4. `herdr` — Điều Phối Nhiều Agent trên Multi-Worktree Độc Lập</span>
               </h4>
-              <p class="text-xs text-slate-400 mt-1" data-lang-en="Spawn and supervise parallel AI coding agents across isolated `git worktree` branches without file conflicts." data-lang-vi="Khởi tạo và giám sát nhiều agent chạy song song trên các nhánh `git worktree` độc lập mà không lo xung đột file.">
-                Khởi tạo và giám sát nhiều agent chạy song song trên các nhánh `git worktree` độc lập mà không lo xung đột file.
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Isolate parallel AI agents into separate Git Worktrees (`/tmp/herdr-worktrees/...`). Eliminates file merge conflicts and workspace contamination." data-lang-vi="Cách ly các Agent chạy song song vào từng Git Worktree độc lập trong thư mục tạm. Triệt tiêu hoàn toàn xung đột ghi đè file.">
+                Cách ly các Agent chạy song song vào từng Git Worktree độc lập trong thư mục tạm. Triệt tiêu hoàn toàn xung đột ghi đè file.
               </p>
             </div>
             <label class="flex items-center gap-2 cursor-pointer">
@@ -1573,30 +1859,33 @@ omp task "Investigate worker pool performance and benchmark throughput"</code></
             </label>
           </div>
 
-          <!-- Install Command -->
           <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
             <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
               <i data-lucide="copy" class="w-3.5 h-3.5"></i>
               <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
             </button>
-            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install herdr orchestrator</span>
-npm install -g herdr
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Spawn 3 parallel agents on separate worktrees:</span>
+herdr spawn \
+  --task "Refactor Auth module sang JWT" --branch "feat/jwt-auth" \
+  --task "Thêm Redis Rate Limiting middleware" --branch "feat/rate-limit" \
+  --task "Tạo OpenAPI documentation" --branch "docs/openapi"
 
-<span class="text-slate-500"># Run parallel agents in isolated worktrees</span>
-herdr run --agents 3 --tasks-file tasks.json</code></pre>
+<span class="text-slate-500"># Check status and batch merge completed worktrees:</span>
+herdr status
+herdr sync --merge</code></pre>
           </div>
         </div>
 
-        <!-- 4.3.4 .cursorrules / RULE.md Template -->
+        <!-- 4.3.5 Fast Aliases & Shortcuts for .zshrc -->
         <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
           <div class="flex items-start justify-between">
             <div>
               <h4 class="text-base font-semibold text-white flex items-center gap-2">
-                <i data-lucide="file-check" class="w-4 h-4 text-accent-amber"></i>
-                <span data-lang-en="4.3.4. Production-Ready `.cursorrules` / `RULE.md` Template" data-lang-vi="4.3.4. File Cấu hình Chuẩn `.cursorrules` / `RULE.md`">4.3.4. File Cấu hình Chuẩn `.cursorrules` / `RULE.md`</span>
+                <i data-lucide="zap" class="w-4 h-4 text-accent-amber"></i>
+                <span data-lang-en="4.3.5. Ultra-Fast Vibe Coding Aliases & Shortcuts (`.zshrc`)" data-lang-vi="4.3.5. Bộ Alias & Phím Tắt Khởi Động Nhanh (`.zshrc`)">4.3.5. Bộ Alias & Phím Tắt Khởi Động Nhanh (`.zshrc`)</span>
               </h4>
-              <p class="text-xs text-slate-400 mt-1" data-lang-en="Place this file in your project root to prevent AI hallucinations, enforce strict types, and guarantee minimal surgical code edits." data-lang-vi="Đặt file này ở thư mục gốc dự án để ép AI tuân thủ chuẩn TypeScript strict, không sinh code rác và viết commit chuẩn mực.">
-                Đặt file này ở thư mục gốc dự án để ép AI tuân thủ chuẩn TypeScript strict, không sinh code rác và viết commit chuẩn mực.
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Control OmniRoute, Claude Code, Aider, OMP, and Herdr in 2-3 keystrokes." data-lang-vi="Điều khiển toàn bộ Gateway, Claude Code, Aider, OMP và Herdr chỉ với 2-3 phím gõ tắt.">
+                Điều khiển toàn bộ Gateway, Claude Code, Aider, OMP và Herdr chỉ với 2-3 phím gõ tắt.
               </p>
             </div>
             <label class="flex items-center gap-2 cursor-pointer">
@@ -1605,29 +1894,81 @@ herdr run --agents 3 --tasks-file tasks.json</code></pre>
             </label>
           </div>
 
-          <!-- Template Snippet -->
           <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
             <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
               <i data-lucide="copy" class="w-3.5 h-3.5"></i>
               <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
             </button>
-            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Create .cursorrules in your project root</span>
+            <pre class="overflow-x-auto pr-20"><code>cat << 'EOF' >> ~/.zshrc
+
+# --- OmniRoute Gateway Controls ---
+alias og="omniroute start --daemon"                     # Khởi chạy gateway ngầm
+alias og-stop="omniroute stop"                          # Dừng gateway
+alias og-status="omniroute status"                      # Kiểm tra latency & health
+alias og-logs="omniroute logs -f"                       # Xem live routing log
+
+# --- Fast AI Agent Launchers (Direct Gateway Hook) ---
+alias cc="ANTHROPIC_BASE_URL=http://localhost:8000/v1 ANTHROPIC_API_KEY=sk-omniroute-master-key ANTHROPIC_MODEL=vibe-coder claude"
+alias cc-think="ANTHROPIC_BASE_URL=http://localhost:8000/v1 ANTHROPIC_API_KEY=sk-omniroute-master-key ANTHROPIC_MODEL=vibe-reasoning claude"
+alias cc-fast="ANTHROPIC_BASE_URL=http://localhost:8000/v1 ANTHROPIC_API_KEY=sk-omniroute-master-key ANTHROPIC_MODEL=vibe-fast claude"
+alias ai="aider --openai-api-base http://localhost:8000/v1 --openai-api-key sk-omniroute-master-key --model openai/vibe-coder"
+alias ai-think="aider --openai-api-base http://localhost:8000/v1 --openai-api-key sk-omniroute-master-key --model openai/vibe-reasoning"
+
+# --- OMP & Herdr Shortcuts ---
+alias ot="omp task"                                     # Chạy 1 task tự động với OMP
+alias hs="herdr status"                                 # Xem trạng thái các worktrees
+alias h-spawn="herdr spawn"                             # Khởi tạo agent trên worktree mới
+alias h-sync="herdr sync --merge"                       # Test & merge các worktrees hoàn thành
+EOF
+source ~/.zshrc</code></pre>
+          </div>
+        </div>
+
+        <!-- 4.3.6 Production-Ready .cursorrules Template -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="file-check" class="w-4 h-4 text-accent-cyan"></i>
+                <span data-lang-en="4.3.6. Production-Ready `.cursorrules` / `RULE.md` Template" data-lang-vi="4.3.6. File Cấu Hình Chuẩn Mực `.cursorrules` / `RULE.md`">4.3.6. File Cấu Hình Chuẩn Mực `.cursorrules` / `RULE.md`</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Place in project root to enforce strict types, surgical diffs, conventional commits, and verification deliverables." data-lang-vi="Đặt ở thư mục gốc dự án để ép AI tuân thủ chuẩn TypeScript strict, không sinh code thừa và viết commit chuẩn mực.">
+                Đặt ở thư mục gốc dự án để ép AI tuân thủ chuẩn TypeScript strict, không sinh code thừa và viết commit chuẩn mực.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Create .cursorrules in project root</span>
 cat << 'EOF' > .cursorrules
-# Engineering Standards & AI Directives
+# Engineering Standards & Load-Bearing Invariants
 
-## Code Quality
+## 1. Core Philosophy
 - Correctness first, then maintainability 6 months out.
-- Strict TypeScript: No `any`, always define explicit return types and interfaces.
-- Prefer boring, clean solutions: Refuse needless abstractions and heavy dependencies.
-- Zero code bloat: Delete unused functions and dead imports immediately.
+- Apply taste: delete weightless code, refuse needless abstractions, prefer boring and robust designs.
+- Zero code bloat: Never avoidably allocate, copy, or compute. Delete dead imports and obsolete helpers immediately.
 
-## Workflow & Git
-- Keep changes minimal and surgically focused on the prompt.
-- Never edit unrelated files without permission.
-- Write clean commit messages adhering to Conventional Commits (`feat:`, `fix:`, `refactor:`).
+## 2. Strict Type System & Architecture
+- Strict TypeScript: Absolute prohibition of `any` or loose type assertions (`as unknown as T`). Explicit return types on all exported functions.
+- Single source of truth: Schema validation (Zod) -> infer TypeScript types directly.
 
-## Testing & Verification
-- Verify behavior before reporting done: run project tests or smoke test CLI/endpoints.
+## 3. Surgical Edits & Git Integrity
+- Never touch unrelated lines or format files arbitrarily outside the requested prompt scope.
+- Before editing exported symbols, check all callsites to prevent silent regressions.
+- Commit messages MUST adhere to Conventional Commits: `feat(scope): ...`, `fix(scope): ...`, `refactor(scope): ...`.
+
+## 4. Verification & Testing Deliverable
+- Never claim a task is "done" without concrete verification proof:
+  - Run the specific test file or smoke test command covering the changed logic.
+  - Report exact test output and edge cases covered.
 EOF</code></pre>
           </div>
         </div>
