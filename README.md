@@ -27,12 +27,15 @@ The **Ultimate Mac Dev & Vibe Coding Setup** is a modern, step-by-step setup gui
 
 ```text
 setup-dev-mac/
-├── index.html                           # Interactive bilingual web setup guide
-├── README.md                            # Project documentation (EN & VI)
+├── index.html                           # Interactive bilingual web setup guide & mindmap
+├── README.md                            # Comprehensive documentation (EN & VI)
+├── Brewfile                             # 1-Click Homebrew bundle (CLI, runtimes & casks)
 ├── .gitignore                           # macOS and temporary file exclusions
 ├── scripts/                             # Automation scripts
 │   ├── export-macos-settings.en.sh      # Settings exporter (English version)
-│   └── export-macos-settings.vi.sh      # Settings exporter (Vietnamese version)
+│   ├── export-macos-settings.vi.sh      # Settings exporter (Vietnamese version)
+│   ├── verify-setup.en.sh               # Automated healthcheck script (English)
+│   └── verify-setup.vi.sh               # Automated healthcheck script (Vietnamese)
 └── backups/                             # Auto-generated restore scripts
     ├── apply-my-settings.en.sh          # Settings restore script (English)
     └── apply-my-settings.vi.sh          # Settings restore script (Vietnamese)
@@ -46,18 +49,29 @@ Launch the local web dashboard in your browser:
 open index.html
 ```
 
-#### 2. Export Your Current Mac Preferences
+#### 2. Install the Complete Stack (1-Click Automation)
+Install all CLI tools, runtimes, editors, and productivity apps via Homebrew:
+```bash
+brew bundle --file=Brewfile
+```
+
+#### 3. Verify Your Environment Health
+Run the automated verification script:
+```bash
+bash scripts/verify-setup.en.sh
+```
+
+#### 4. Export & Backup Your Current Mac Preferences
 Scan and export all current macOS preferences (Trackpad 4-finger swipes, 2-finger click, key repeats, Finder, Dock) into the `backups/` directory:
 ```bash
 bash scripts/export-macos-settings.en.sh
 ```
 
-#### 3. Restore Preferences on Any New Mac
+#### 5. Restore Preferences on Any New Mac
 Transfer the generated script to your new Mac and run:
 ```bash
 bash backups/apply-my-settings.en.sh
 ```
-
 ---
 
 ## 🇻🇳 Tiếng Việt
@@ -77,12 +91,15 @@ bash backups/apply-my-settings.en.sh
 
 ```text
 setup-dev-mac/
-├── index.html                           # Giao diện web hướng dẫn chi tiết từng bước
-├── README.md                            # Tài liệu dự án (EN & VI)
+├── index.html                           # Giao diện web hướng dẫn chi tiết từng bước & sơ đồ mindmap
+├── README.md                            # Tài liệu dự án đầy đủ (EN & VI)
+├── Brewfile                             # File tự động hóa cài đặt trọn gói với Homebrew
 ├── .gitignore                           # Loại trừ file tạm hệ thống macOS
 ├── scripts/                             # Thư mục chứa script tự động hóa
 │   ├── export-macos-settings.vi.sh      # Script trích xuất cài đặt (Bản Tiếng Việt)
-│   └── export-macos-settings.en.sh      # Script trích xuất cài đặt (Bản Tiếng Anh)
+│   ├── export-macos-settings.en.sh      # Script trích xuất cài đặt (Bản Tiếng Anh)
+│   ├── verify-setup.vi.sh               # Script kiểm tra sức khỏe môi trường (Tiếng Việt)
+│   └── verify-setup.en.sh               # Script kiểm tra sức khỏe môi trường (Tiếng Anh)
 └── backups/                             # Thư mục chứa file cấu hình đã xuất
     ├── apply-my-settings.vi.sh          # Script khôi phục cài đặt trên máy mới (VI)
     └── apply-my-settings.en.sh          # Script khôi phục cài đặt trên máy mới (EN)
@@ -96,18 +113,29 @@ Mở file `index.html` trực tiếp trên trình duyệt của bạn:
 open index.html
 ```
 
-#### 2. Trích xuất cài đặt máy Mac hiện tại
+#### 2. Cài đặt trọn gói 1-Click
+Cài đặt toàn bộ CLI tools, runtime, editor và ứng dụng qua Homebrew:
+```bash
+brew bundle --file=Brewfile
+```
+
+#### 3. Kiểm tra tự động tính sẵn sàng của môi trường
+Chạy script kiểm tra sức khỏe toàn bộ toolchain:
+```bash
+bash scripts/verify-setup.vi.sh
+```
+
+#### 4. Trích xuất cài đặt máy Mac hiện tại
 Chạy script để quét và trích xuất cấu hình hệ thống vào thư mục `backups/`:
 ```bash
 bash scripts/export-macos-settings.vi.sh
 ```
 
-#### 3. Khôi phục cài đặt trên máy Mac mới
+#### 5. Khôi phục cài đặt trên máy Mac mới
 Chuyển file khôi phục sang máy Mac mới và chạy:
 ```bash
 bash backups/apply-my-settings.vi.sh
 ```
-
 ---
 
 ## 👤 Author / Tác giả

@@ -20,9 +20,9 @@ brew "yq"
 
 # Runtimes & Package Managers
 brew "mise"
+brew "bun"
 brew "pnpm"
 brew "uv"
-
 # AI Coding Agents
 brew "aider"
 
