@@ -160,11 +160,12 @@
               </span>
               <i data-lucide="check" class="w-4 h-4 text-brand-500"></i>
             </a>
-            <a href="#phase-7" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-40">
+            <a href="#phase-7" class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-800/80 text-brand-500 font-medium border border-brand-500/20">
               <span class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono">7</span>
+                <span class="w-5 h-5 rounded-md bg-brand-500/20 text-brand-500 flex items-center justify-center text-xs font-mono">7</span>
                 <span data-lang-en="Automation & Test" data-lang-vi="Tự động hóa & Kiểm tra">Tự động hóa & Kiểm tra</span>
               </span>
+              <i data-lucide="check" class="w-4 h-4 text-brand-500"></i>
             </a>
           </nav>
         </div>
@@ -2029,6 +2030,98 @@ brew install --cask arc</code></pre>
         </div>
       </section>
 
+      <!-- PHASE 7: Full Automation & Healthcheck Verification -->
+      <section id="phase-7" class="space-y-6">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+          <div class="flex items-center space-x-3">
+            <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-brand-500/20 text-brand-500 font-mono font-bold text-sm border border-brand-500/30">07</span>
+            <div>
+              <h3 class="text-xl font-bold text-white flex items-center gap-2" data-lang-en="Phase 7: Full Automation & Verification Checklist" data-lang-vi="Giai đoạn 7: Tự Động Hóa 1-Click & Kiểm Tra Toàn Diện">
+                <span>Giai đoạn 7: Tự Động Hóa 1-Click & Kiểm Tra Toàn Diện</span>
+              </h3>
+              <p class="text-xs text-slate-400" data-lang-en="Install entire stack via 1-click Brewfile bundle and verify health with automated test script." data-lang-vi="Cài đặt trọn gói toàn bộ môi trường với 1 file Brewfile và kiểm tra tính sẵn sàng bằng script tự động.">
+                Cài đặt trọn gói toàn bộ môi trường với 1 file Brewfile và kiểm tra tính sẵn sàng bằng script tự động.
+              </p>
+            </div>
+          </div>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-brand-500/10 text-brand-500 border border-brand-500/20 font-medium" data-lang-en="Automation" data-lang-vi="Tự động hóa">
+            Tự động hóa
+          </span>
+        </div>
+
+        <!-- 7.1 Brewfile 1-Click Bundle -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="package" class="w-4 h-4 text-accent-amber"></i>
+                <span data-lang-en="7.1. 1-Click `Brewfile` Bundle Installation" data-lang-vi="7.1. Cài Đặt Trọn Gói 1-Click Bằng `Brewfile`">7.1. Cài Đặt Trọn Gói 1-Click Bằng `Brewfile`</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Instead of typing commands one-by-one, install all CLI tools, runtimes, and desktop apps in one single command." data-lang-vi="Thay vì phải gõ từng lệnh, cài đặt toàn bộ CLI tools, runtimes, AI agents và ứng dụng desktop chỉ với 1 dòng lệnh duy nhất.">
+                Thay vì phải gõ từng lệnh, cài đặt toàn bộ CLI tools, runtimes, AI agents và ứng dụng desktop chỉ với 1 dòng lệnh duy nhất.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex items-center gap-2 text-xs">
+            <span class="text-slate-400" data-lang-en="Brewfile in repository:" data-lang-vi="File Brewfile trong repo:">File Brewfile trong repo:</span>
+            <a href="Brewfile" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-surface-950 border border-accent-amber/30 text-accent-amber hover:bg-surface-800 transition font-mono">
+              <i data-lucide="file-code" class="w-3.5 h-3.5"></i>
+              <span>Brewfile</span>
+            </a>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install all tools and apps defined in Brewfile</span>
+brew bundle --file=Brewfile</code></pre>
+          </div>
+        </div>
+
+        <!-- 7.2 Healthcheck Verification Script -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="check-check" class="w-4 h-4 text-brand-500"></i>
+                <span data-lang-en="7.2. Automated Healthcheck Verification Script" data-lang-vi="7.2. Script Kiểm Tra Tự Động Toàn Bộ Môi Trường">7.2. Script Kiểm Tra Tự Động Toàn Bộ Môi Trường</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Run our verification script to scan every tool, runtime, AI agent, and SSH key on your Mac to ensure 100% readiness." data-lang-vi="Chạy script kiểm tra để quét toàn bộ công cụ, runtime, AI agent và khoá SSH trên máy bạn để đảm bảo sẵn sàng 100%.">
+                Chạy script kiểm tra để quét toàn bộ công cụ, runtime, AI agent và khoá SSH trên máy bạn để đảm bảo sẵn sàng 100%.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <!-- Script Source File Link -->
+          <div class="flex items-center gap-2 text-xs">
+            <span class="text-slate-400" data-lang-en="Verification script:" data-lang-vi="Script kiểm tra:">Script kiểm tra:</span>
+            <a id="verify-script-link" href="scripts/verify-setup.vi.sh" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-surface-950 border border-brand-500/30 text-brand-500 hover:bg-surface-800 transition font-mono">
+              <i data-lucide="file-check-2" class="w-3.5 h-3.5"></i>
+              <span id="verify-script-link-text">scripts/verify-setup.vi.sh</span>
+            </a>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code id="verify-cmd-code">bash scripts/verify-setup.vi.sh</code></pre>
+          </div>
+        </div>
+      </section>
+
       <!-- Footer -->
       <footer class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500 space-y-2">
         <p data-lang-en="Built for Modern Developers & Vibe Coding • macOS Apple Silicon" data-lang-vi="Dành riêng cho Lập trình viên hiện đại & Vibe Coding • macOS Apple Silicon">
@@ -2099,6 +2192,23 @@ brew install --cask arc</code></pre>
           exportCmdCode.textContent = 'bash scripts/export-macos-settings.en.sh';
           backupOutputPath.textContent = 'backups/apply-my-settings.en.sh';
           applyCmdCode.textContent = 'bash backups/apply-my-settings.en.sh';
+        }
+      }
+
+      // Update verify script paths & commands based on language
+      const verifyScriptLink = document.getElementById('verify-script-link');
+      const verifyScriptLinkText = document.getElementById('verify-script-link-text');
+      const verifyCmdCode = document.getElementById('verify-cmd-code');
+
+      if (verifyScriptLink && verifyScriptLinkText && verifyCmdCode) {
+        if (lang === 'vi') {
+          verifyScriptLink.href = 'scripts/verify-setup.vi.sh';
+          verifyScriptLinkText.textContent = 'scripts/verify-setup.vi.sh';
+          verifyCmdCode.textContent = 'bash scripts/verify-setup.vi.sh';
+        } else {
+          verifyScriptLink.href = 'scripts/verify-setup.en.sh';
+          verifyScriptLinkText.textContent = 'scripts/verify-setup.en.sh';
+          verifyCmdCode.textContent = 'bash scripts/verify-setup.en.sh';
         }
       }
 
