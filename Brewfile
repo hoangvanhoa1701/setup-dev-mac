@@ -40,3 +40,16 @@ cask "shottr"
 cask "jordanbaird-ice"
 cask "betterdisplay"
 cask "arc"
+
+# ==============================================================================
+# Optional Power Add-ons (Uncomment to install as needed)
+# ==============================================================================
+# cask "tableplus"          # Native Database GUI (Postgres/MySQL/Redis/SQLite)
+# cask "beekeeper-studio"   # Open-source SQL Editor
+# cask "bruno"              # Offline Git-friendly API Client (Postman alternative)
+# cask "proxyman"           # HTTP/HTTPS Network Packet Sniffer
+# cask "stats"              # Menu Bar System Monitor (CPU/RAM/Net/Battery)
+# cask "keepingyouawake"    # Prevent Mac sleep during large LLM downloads
+# cask "qlmarkdown"         # Space-key QuickLook markdown preview
+# cask "syntax-highlight"   # Space-key QuickLook code syntax preview
+# cask "fork"               # Visual Git Client & Merge Conflict Resolver

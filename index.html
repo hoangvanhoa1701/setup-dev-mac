@@ -130,6 +130,7 @@
       <a href="#phase-4" class="px-2 py-1 rounded-md bg-surface-900 border border-accent-rose/50 text-accent-rose font-bold shrink-0">04. AI Stack</a>
       <a href="#phase-5" class="px-2 py-1 rounded-md bg-surface-900 border border-slate-800 text-slate-300 hover:text-accent-cyan shrink-0">05. Git</a>
       <a href="#phase-6" class="px-2 py-1 rounded-md bg-surface-900 border border-slate-800 text-slate-300 hover:text-brand-500 shrink-0">06. Apps</a>
+      <a href="#optional-addons" class="px-2 py-1 rounded-md bg-surface-900 border border-accent-amber/50 text-accent-amber font-bold shrink-0">★ Add-ons</a>
       <a href="#phase-7" class="px-2 py-1 rounded-md bg-surface-900 border border-brand-500/50 text-brand-500 font-bold shrink-0">07. Auto</a>
     </div>
   </header>
@@ -192,6 +193,12 @@
                 <span data-lang-en="Productivity Suite" data-lang-vi="Tiện ích & Năng suất">Tiện ích & Năng suất</span>
               </span>
               <i data-lucide="check" class="w-4 h-4 text-brand-500"></i>
+            </a>
+            <a href="#optional-addons" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition">
+              <span class="flex items-center gap-2">
+                <span class="w-5 h-5 rounded-md bg-accent-amber/20 text-accent-amber flex items-center justify-center text-xs font-mono">★</span>
+                <span data-lang-en="Optional Power Add-ons" data-lang-vi="Tiện ích Mở rộng Tùy chọn">Tiện ích Mở rộng Tùy chọn</span>
+              </span>
             </a>
             <a href="#phase-7" class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-800/80 text-brand-500 font-medium border border-brand-500/20">
               <span class="flex items-center gap-2">
@@ -2419,6 +2426,65 @@ Nghiệm thu: Chạy `npm test tests/rate-limit.test.ts`, báo cáo kết quả 
           </div>
 
         </div>
+
+        <!-- 4.3.8 Deep Multi-Agent Worktrees, Code Review & E2E Testing Architecture -->
+        <div class="bg-gradient-to-br from-surface-900 via-surface-900 to-accent-cyan/10 border border-accent-cyan/40 rounded-xl p-4 sm:p-6 space-y-5 hover:border-accent-cyan transition shadow-xl">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800/80 pb-4">
+            <div class="space-y-1">
+              <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-accent-cyan/20 text-accent-cyan text-[11px] font-mono font-bold">
+                <i data-lucide="git-merge" class="w-3.5 h-3.5"></i>
+                <span data-lang-en="Enterprise Architecture" data-lang-vi="Kiến Trúc Nâng Cao">Kiến Trúc Nâng Cao</span>
+              </div>
+              <h4 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+                <i data-lucide="cpu" class="w-5 h-5 text-accent-cyan"></i>
+                <span data-lang-en="4.3.8. Multi-Agent Worktrees, Code Review Pipeline & E2E Testing" data-lang-vi="4.3.8. Quy Trình Multi-Agent Worktrees, Code Review & E2E Testing">4.3.8. Quy Trình Multi-Agent Worktrees, Code Review & E2E Testing</span>
+              </h4>
+              <p class="text-xs text-slate-400 leading-relaxed" data-lang-en="Comprehensive architectural blueprint: Spec & Plan writing, Rules/Skills/Hooks, parallel Git Worktrees, automated code review gates, and real-world API/UI headless browser testing." data-lang-vi="Cẩm nang kiến trúc toàn diện: Thiết kế Spec & Plan, Rules/Skills/Hooks, phân luồng Git Worktree cho đa Agent, quy trình Code Review và tự động hóa kiểm thử API/UI Web thực chiến.">
+                Cẩm nang kiến trúc toàn diện: Thiết kế Spec & Plan, Rules/Skills/Hooks, phân luồng Git Worktree cho đa Agent, quy trình Code Review và tự động hóa kiểm thử API/UI Web thực chiến.
+              </p>
+            </div>
+
+            <button onclick="openModal('agent-architecture-modal')" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-accent-cyan to-brand-500 hover:from-accent-cyan/90 hover:to-brand-500/90 text-surface-950 font-bold text-xs shadow-lg shadow-accent-cyan/20 transition transform active:scale-95 shrink-0">
+              <i data-lucide="maximize-2" class="w-4 h-4"></i>
+              <span data-lang-en="View Full Architecture Guide" data-lang-vi="Xem Toàn Bộ Cẩm Nang Chuyên Sâu">Xem Toàn Bộ Cẩm Nang Chuyên Sâu</span>
+            </button>
+          </div>
+
+          <!-- 4 Pillars Preview Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+            <div onclick="openModal('agent-architecture-modal')" class="p-3 bg-surface-950 rounded-lg border border-slate-800 hover:border-accent-cyan/50 cursor-pointer transition space-y-1 group">
+              <div class="font-bold text-accent-cyan flex items-center justify-between">
+                <span>1. Spec & Rules</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 opacity-60 group-hover:translate-x-0.5 transition"></i>
+              </div>
+              <p class="text-[11px] text-slate-400">Spec/Plan (.md), `.cursorrules` bất biến, Custom Skills & Hooks.</p>
+            </div>
+
+            <div onclick="openModal('agent-architecture-modal')" class="p-3 bg-surface-950 rounded-lg border border-slate-800 hover:border-accent-purple/50 cursor-pointer transition space-y-1 group">
+              <div class="font-bold text-accent-purple flex items-center justify-between">
+                <span>2. Multi-Worktrees</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 opacity-60 group-hover:translate-x-0.5 transition"></i>
+              </div>
+              <p class="text-[11px] text-slate-400">Cách ly đa Agent trên từng branch độc lập, triệt tiêu xung đột ghi đè file.</p>
+            </div>
+
+            <div onclick="openModal('agent-architecture-modal')" class="p-3 bg-surface-950 rounded-lg border border-slate-800 hover:border-accent-amber/50 cursor-pointer transition space-y-1 group">
+              <div class="font-bold text-accent-amber flex items-center justify-between">
+                <span>3. Code Review Gate</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 opacity-60 group-hover:translate-x-0.5 transition"></i>
+              </div>
+              <p class="text-[11px] text-slate-400">Subagent `reviewer` rà soát git diff, bắt lỗi type, memory leak trước khi merge.</p>
+            </div>
+
+            <div onclick="openModal('agent-architecture-modal')" class="p-3 bg-surface-950 rounded-lg border border-slate-800 hover:border-brand-500/50 cursor-pointer transition space-y-1 group">
+              <div class="font-bold text-brand-500 flex items-center justify-between">
+                <span>4. E2E & Browser Test</span>
+                <i data-lucide="chevron-right" class="w-3.5 h-3.5 opacity-60 group-hover:translate-x-0.5 transition"></i>
+              </div>
+              <p class="text-[11px] text-slate-400">Test API qua cURL/Vitest + Headless Browser tự động click UI & chụp ảnh proof.</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- PHASE 5: Terminal & Git Workflow -->
@@ -2818,6 +2884,177 @@ brew install --cask arc</code></pre>
         </div>
       </section>
 
+      <!-- OPTIONAL POWER ADD-ONS SECTION -->
+      <section id="optional-addons" class="space-y-4 sm:space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-800 gap-2">
+          <div class="flex items-center space-x-2.5 sm:space-x-3">
+            <span class="flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-accent-amber/20 text-accent-amber font-mono font-bold text-xs sm:text-sm border border-accent-amber/30 shrink-0">★</span>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2" data-lang-en="Optional Power Add-ons & Developer Utilities" data-lang-vi="Tiện Ích Mở Rộng & Công Cụ Bổ Trợ Tùy Chọn">
+                <span>Tiện Ích Mở Rộng & Công Cụ Bổ Trợ Tùy Chọn</span>
+              </h3>
+              <p class="text-[11px] sm:text-xs text-slate-400" data-lang-en="High-value optional tools for database management, API debugging, Finder quicklook, and system monitoring." data-lang-vi="Các công cụ chất lượng cao tùy chọn theo nhu cầu: quản lý Database, kiểm thử API, xem trước code trong Finder và giám sát hệ thống.">
+                Các công cụ chất lượng cao tùy chọn theo nhu cầu: quản lý Database, kiểm thử API, xem trước code trong Finder và giám sát hệ thống.
+              </p>
+            </div>
+          </div>
+          <span class="self-start sm:self-auto text-[10px] sm:text-xs px-2.5 py-0.5 sm:py-1 rounded-full bg-accent-amber/10 text-accent-amber border border-accent-amber/20 font-medium" data-lang-en="Optional" data-lang-vi="Tùy chọn">
+            Tùy chọn
+          </span>
+        </div>
+
+        <!-- Grid of 5 Optional Power Tool Categories -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- 1. Database GUI (TablePlus & Beekeeper) -->
+          <div class="bg-surface-900 border border-slate-800 rounded-xl p-4 sm:p-5 space-y-3 hover:border-slate-700 transition flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  <i data-lucide="database" class="w-4 h-4 text-accent-cyan"></i>
+                  <span>1. Database GUI (TablePlus & Beekeeper)</span>
+                </h4>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-surface-950 text-slate-400 border border-slate-800">DB Clients</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed" data-lang-en="Ultra-lightweight native Swift GUI for Postgres, MySQL, Redis, SQLite, and MongoDB. Fast inline data editing." data-lang-vi="GUI native Swift siêu nhẹ kết nối đồng thời Postgres, MySQL, Redis, SQLite, MongoDB. Sửa dữ liệu inline cực nhanh.">
+                GUI native Swift siêu nhẹ kết nối đồng thời Postgres, MySQL, Redis, SQLite, MongoDB. Sửa dữ liệu inline cực nhanh.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs pt-1">
+                <a href="https://tableplus.com/" target="_blank" class="text-accent-cyan hover:underline inline-flex items-center gap-1">
+                  <i data-lucide="external-link" class="w-3 h-3"></i> TablePlus
+                </a>
+                <span class="text-slate-600">•</span>
+                <a href="https://www.beekeeperstudio.io/" target="_blank" class="text-accent-amber hover:underline inline-flex items-center gap-1">
+                  <i data-lucide="external-link" class="w-3 h-3"></i> Beekeeper Studio
+                </a>
+              </div>
+            </div>
+
+            <div class="relative bg-surface-950 rounded-lg p-3 font-mono text-xs text-slate-200 border border-slate-800">
+              <button onclick="copyCode(this)" class="absolute top-2.5 right-2.5 flex items-center gap-1 px-2 py-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+              </button>
+              <pre class="overflow-x-auto pr-16"><code>brew install --cask tableplus beekeeper-studio</code></pre>
+            </div>
+          </div>
+
+          <!-- 2. API & Network Testing (Bruno & Proxyman) -->
+          <div class="bg-surface-900 border border-slate-800 rounded-xl p-4 sm:p-5 space-y-3 hover:border-slate-700 transition flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  <i data-lucide="send" class="w-4 h-4 text-accent-purple"></i>
+                  <span>2. API & Network Testing (Bruno & Proxyman)</span>
+                </h4>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-surface-950 text-slate-400 border border-slate-800">API Debug</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed" data-lang-en="Fast offline Postman alternative (saves `.bru` in Git) + Proxyman native HTTP/HTTPS traffic debugger." data-lang-vi="Thay thế Postman hoàn hảo (lưu collection `.bru` trong Git) + Proxyman bắt và phân tích gói tin HTTP/HTTPS trực quan.">
+                Thay thế Postman hoàn hảo (lưu collection `.bru` trong Git) + Proxyman bắt và phân tích gói tin HTTP/HTTPS trực quan.
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs pt-1">
+                <a href="https://www.usebruno.com/" target="_blank" class="text-accent-purple hover:underline inline-flex items-center gap-1">
+                  <i data-lucide="external-link" class="w-3 h-3"></i> Bruno
+                </a>
+                <span class="text-slate-600">•</span>
+                <a href="https://proxyman.io/" target="_blank" class="text-accent-cyan hover:underline inline-flex items-center gap-1">
+                  <i data-lucide="external-link" class="w-3 h-3"></i> Proxyman
+                </a>
+              </div>
+            </div>
+
+            <div class="relative bg-surface-950 rounded-lg p-3 font-mono text-xs text-slate-200 border border-slate-800">
+              <button onclick="copyCode(this)" class="absolute top-2.5 right-2.5 flex items-center gap-1 px-2 py-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+              </button>
+              <pre class="overflow-x-auto pr-16"><code>brew install --cask bruno proxyman</code></pre>
+            </div>
+          </div>
+
+          <!-- 3. Finder QuickLook Code Preview -->
+          <div class="bg-surface-900 border border-slate-800 rounded-xl p-4 sm:p-5 space-y-3 hover:border-slate-700 transition flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  <i data-lucide="eye" class="w-4 h-4 text-brand-500"></i>
+                  <span>3. Finder QuickLook Code Plugins</span>
+                </h4>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-surface-950 text-slate-400 border border-slate-800">QuickLook</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed" data-lang-en="Press Space on any `.ts`, `.py`, `.json`, `.md` file in Finder to preview syntax-highlighted code instantly." data-lang-vi="Nhấn phím Space (Cách) trên bất kỳ file code nào trong Finder để xem trước tô màu cú pháp ngay lập tức.">
+                Nhấn phím Space (Cách) trên bất kỳ file code nào trong Finder để xem trước tô màu cú pháp ngay lập tức.
+              </p>
+            </div>
+
+            <div class="relative bg-surface-950 rounded-lg p-3 font-mono text-xs text-slate-200 border border-slate-800">
+              <button onclick="copyCode(this)" class="absolute top-2.5 right-2.5 flex items-center gap-1 px-2 py-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+              </button>
+              <pre class="overflow-x-auto pr-16"><code>brew install --cask qlmarkdown syntax-highlight</code></pre>
+            </div>
+          </div>
+
+          <!-- 4. System Monitor & Prevent Sleep (Stats & KeepingYouAwake) -->
+          <div class="bg-surface-900 border border-slate-800 rounded-xl p-4 sm:p-5 space-y-3 hover:border-slate-700 transition flex flex-col justify-between">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  <i data-lucide="activity" class="w-4 h-4 text-accent-rose"></i>
+                  <span>4. System Stats & Anti-Sleep (Menu Bar)</span>
+                </h4>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-surface-950 text-slate-400 border border-slate-800">Utilities</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed" data-lang-en="Live CPU/RAM/Network meters in Menu Bar (`Stats`) + 1-click prevent sleep when downloading LLMs (`KeepingYouAwake`)." data-lang-vi="Theo dõi CPU/RAM/Mạng trên Menu Bar (`Stats`) + Chặn máy ngủ khi đang tải model LLM lớn (`KeepingYouAwake`).">
+                Theo dõi CPU/RAM/Mạng trên Menu Bar (`Stats`) + Chặn máy ngủ khi đang tải model LLM lớn (`KeepingYouAwake`).
+              </p>
+              <div class="flex flex-wrap gap-2 text-xs pt-1">
+                <a href="https://github.com/exelban/stats" target="_blank" class="text-accent-rose hover:underline inline-flex items-center gap-1">
+                  <i data-lucide="external-link" class="w-3 h-3"></i> Stats (GitHub)
+                </a>
+                <span class="text-slate-600">•</span>
+                <a href="https://keepingyouawake.app/" target="_blank" class="text-accent-amber hover:underline inline-flex items-center gap-1">
+                  <i data-lucide="external-link" class="w-3 h-3"></i> KeepingYouAwake
+                </a>
+              </div>
+            </div>
+
+            <div class="relative bg-surface-950 rounded-lg p-3 font-mono text-xs text-slate-200 border border-slate-800">
+              <button onclick="copyCode(this)" class="absolute top-2.5 right-2.5 flex items-center gap-1 px-2 py-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+              </button>
+              <pre class="overflow-x-auto pr-16"><code>brew install --cask stats keepingyouawake</code></pre>
+            </div>
+          </div>
+
+          <!-- 5. Visual Git Client (Fork) -->
+          <div class="md:col-span-2 bg-surface-900 border border-slate-800 rounded-xl p-4 sm:p-5 space-y-3 hover:border-slate-700 transition flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="space-y-1.5 max-w-xl">
+              <div class="flex items-center gap-2">
+                <h4 class="text-sm font-bold text-white flex items-center gap-2">
+                  <i data-lucide="git-branch" class="w-4 h-4 text-accent-cyan"></i>
+                  <span>5. Visual Git Client (Fork)</span>
+                </h4>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-surface-950 text-slate-400 border border-slate-800">Git GUI</span>
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed" data-lang-en="Fast, native Git client with interactive merge conflict resolver and visual branch tree visualization." data-lang-vi="Git GUI native mượt mà giúp giải quyết merge conflict trực quan và theo dõi cây commit đa nhánh rõ ràng.">
+                Git GUI native mượt mà giúp giải quyết merge conflict trực quan và theo dõi cây commit đa nhánh rõ ràng.
+              </p>
+            </div>
+
+            <div class="relative bg-surface-950 rounded-lg p-3 font-mono text-xs text-slate-200 border border-slate-800 shrink-0 w-full md:w-auto">
+              <button onclick="copyCode(this)" class="absolute top-2.5 right-2.5 flex items-center gap-1 px-2 py-1 rounded bg-surface-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition">
+                <i data-lucide="copy" class="w-3 h-3"></i>
+                <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+              </button>
+              <pre class="overflow-x-auto pr-16"><code>brew install --cask fork</code></pre>
+            </div>
+          </div>
+
+        </div>
+      </section>
       <!-- PHASE 7: Full Automation & Healthcheck Verification -->
       <section id="phase-7" class="space-y-4 sm:space-y-6">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-800 gap-2">
@@ -3079,11 +3316,254 @@ brew bundle --file=Brewfile</code></pre>
       document.getElementById('progress-stat').textContent = `${percent}%`;
     }
 
+    // Modal System
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+      }
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function handleModalBackdropClick(event, modalId) {
+      if (event.target.id === modalId) {
+        closeModal(modalId);
+      }
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const openModals = document.querySelectorAll('[id$="-modal"]:not(.hidden)');
+        openModals.forEach(m => closeModal(m.id));
+      }
+    });
+
     // Init language & dynamic CLI on load
     document.addEventListener('DOMContentLoaded', () => {
       setLanguage(currentLang);
       updateCliCommand();
     });
   </script>
+
+  <!-- ARCHITECTURE & MULTI-AGENT MODAL -->
+  <div id="agent-architecture-modal" class="fixed inset-0 z-50 bg-surface-950/85 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6 overflow-y-auto" onclick="handleModalBackdropClick(event, 'agent-architecture-modal')">
+    <div class="relative w-full max-w-4xl max-h-[90vh] bg-surface-900 border border-slate-700 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200" onclick="event.stopPropagation()">
+      
+      <!-- Modal Sticky Header -->
+      <div class="p-4 sm:p-5 border-b border-slate-800 bg-surface-950/90 backdrop-blur flex items-center justify-between gap-3 shrink-0">
+        <div class="flex items-center space-x-3 min-w-0">
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-accent-cyan/30 to-brand-500/30 flex items-center justify-center text-accent-cyan border border-accent-cyan/30 shrink-0">
+            <i data-lucide="cpu" class="w-5 h-5 text-white"></i>
+          </div>
+          <div class="min-w-0">
+            <h3 class="font-bold text-sm sm:text-base md:text-lg text-white truncate flex items-center gap-2" data-lang-en="Enterprise Vibe Coding: Multi-Agent, Review & E2E Testing" data-lang-vi="Kiến Trúc Vibe Coding: Multi-Agent, Review & E2E Testing">
+              <span>Kiến Trúc Vibe Coding: Multi-Agent, Review & E2E Testing</span>
+            </h3>
+            <p class="text-[11px] sm:text-xs text-slate-400 truncate" data-lang-en="Deep architectural handbook for Tech Leads & Autonomous AI Agents" data-lang-vi="Cẩm nang kiến trúc chuyên sâu cho AI Tech Lead & Hệ thống Autonomous Agent">
+              Cẩm nang kiến trúc chuyên sâu cho AI Tech Lead & Hệ thống Autonomous Agent
+            </p>
+          </div>
+        </div>
+
+        <button onclick="closeModal('agent-architecture-modal')" class="p-2 rounded-lg bg-surface-800 hover:bg-slate-700 text-slate-300 hover:text-white transition shrink-0">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Scrollable Content -->
+      <div class="p-4 sm:p-6 overflow-y-auto space-y-6 text-xs text-slate-300 leading-relaxed custom-scrollbar">
+        
+        <!-- SECTION 1: Specs, Plans, Rules, Skills & Hooks -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 text-accent-cyan font-bold text-sm uppercase tracking-wider border-b border-slate-800 pb-1.5">
+            <i data-lucide="file-text" class="w-4 h-4"></i>
+            <span data-lang-en="1. Project Inception: Specs, Plans, Rules, Skills & Hooks" data-lang-vi="1. Khởi Tạo Dự Án: Specs, Plans, Rules, Skills & Hooks">1. Khởi Tạo Dự Án: Specs, Plans, Rules, Skills & Hooks</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="p-3.5 bg-surface-950 rounded-xl border border-slate-800 space-y-1.5">
+              <div class="font-bold text-white flex items-center gap-1.5">
+                <i data-lucide="target" class="w-3.5 h-3.5 text-brand-500"></i>
+                <span>Specs & Plans (`specs/` / `PLAN.md`)</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">
+                • <strong>Bắt buộc</strong> cho mọi task từ 3 bước trở lên.<br>
+                • <strong>Nội dung:</strong> Định nghĩa Goal (Mục tiêu), Interface/Contract (Kiểu dữ liệu TypeScript/Zod), và các Phase chia nhỏ để Agent làm đến đâu tick `[x]` đến đó.
+              </p>
+            </div>
+
+            <div class="p-3.5 bg-surface-950 rounded-xl border border-slate-800 space-y-1.5">
+              <div class="font-bold text-white flex items-center gap-1.5">
+                <i data-lucide="shield" class="w-3.5 h-3.5 text-accent-rose"></i>
+                <span>Rules (`.cursorrules` / `RULE.md`)</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">
+                • <strong>Luật bất biến:</strong> Nằm ở thư mục gốc dự án.<br>
+                • Ép AI luôn tuân thủ: TypeScript strict không `any`, commit theo chuẩn `feat: ...`, tuyệt đối không format file ngoài phạm vi yêu cầu.
+              </p>
+            </div>
+
+            <div class="p-3.5 bg-surface-950 rounded-xl border border-slate-800 space-y-1.5">
+              <div class="font-bold text-white flex items-center gap-1.5">
+                <i data-lucide="zap" class="w-3.5 h-3.5 text-accent-amber"></i>
+                <span>Skills (`.agents/skills/*/SKILL.md`)</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">
+                • <strong>Công thức chuyên biệt:</strong> Hướng dẫn Agent cách thực hiện các tác vụ phức tạp (như `security-audit`, `database-migration`, `generate-canvas`).
+              </p>
+            </div>
+
+            <div class="p-3.5 bg-surface-950 rounded-xl border border-slate-800 space-y-1.5">
+              <div class="font-bold text-white flex items-center gap-1.5">
+                <i data-lucide="anchor" class="w-3.5 h-3.5 text-accent-purple"></i>
+                <span>Hooks (`.cursor/hooks.json`)</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">
+                • <strong>Kích hoạt tự động:</strong> Chạy linter tự động trước khi save, chặn agent sửa `.env`, hoặc kích hoạt test suite khi file code thay đổi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: Multi-Agent Worktrees & Orchestration -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 text-accent-purple font-bold text-sm uppercase tracking-wider border-b border-slate-800 pb-1.5">
+            <i data-lucide="git-fork" class="w-4 h-4"></i>
+            <span data-lang-en="2. Multi-Agent Worktree Isolation & Peer Communication" data-lang-vi="2. Phân Luồng Git Worktree & Giao Tiếp Đa Agent">2. Phân Luồng Git Worktree & Giao Tiếp Đa Agent</span>
+          </div>
+
+          <div class="p-4 bg-surface-950 rounded-xl border border-slate-800 space-y-3">
+            <p class="text-slate-300">
+              Khi phát triển song song nhiều tính năng, <strong>tuyệt đối không để nhiều Agent chạy chung một thư mục</strong>. Thay vào đó, mỗi Agent được cấp một Git Worktree độc lập:
+            </p>
+
+            <div class="font-mono text-[11px] p-3 rounded bg-surface-900 border border-slate-800/80 text-accent-cyan overflow-x-auto">
+              <pre><code>MAIN AGENT (Tech Lead & Contract Owner)
+   ├── Worktree 1: /tmp/wt-api (Branch: feat/api)  --> Agent A: Viết backend & database
+   ├── Worktree 2: /tmp/wt-ui  (Branch: feat/ui)   --> Agent B: Viết React & Tailwind CSS
+   └── Worktree 3: /tmp/wt-doc (Branch: docs/api)  --> Agent C: Viết OpenAPI & Specs</code></pre>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+              <div class="p-2.5 rounded bg-surface-900 border border-slate-800">
+                <span class="font-bold text-brand-500">• Chốt Contract Trước (Shared Schema):</span>
+                <p class="text-slate-400 text-[11px] mt-0.5">Main Agent định nghĩa sẵn file schema chung (`types/auth.ts`). Agent Frontend dựng UI theo contract đó, Agent Backend viết endpoint khớp 100% schema.</p>
+              </div>
+              <div class="p-2.5 rounded bg-surface-900 border border-slate-800">
+                <span class="font-bold text-accent-purple">• Giao Tiếp Phi Phong Tỏa (Non-Blocking Hub):</span>
+                <p class="text-slate-400 text-[11px] mt-0.5">Các Agent nhắn tin trao đổi qua Hub messaging phi tập trung, không chặn vòng lặp thực thi của nhau.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: Code Review Pipeline -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 text-accent-amber font-bold text-sm uppercase tracking-wider border-b border-slate-800 pb-1.5">
+            <i data-lucide="check-square" class="w-4 h-4"></i>
+            <span data-lang-en="3. Automated Code Review Pipeline & Invariant Gates" data-lang-vi="3. Quy Trình Code Review Tự Động Trước Khi Merge">3. Quy Trình Code Review Tự Động Trước Khi Merge</span>
+          </div>
+
+          <div class="p-4 bg-surface-950 rounded-xl border border-slate-800 space-y-3">
+            <p class="text-slate-300">
+              Trước khi hợp nhất code từ Worktree vào nhánh chính `main`, subagent <code class="text-accent-amber font-mono">reviewer</code> và <code class="text-accent-rose font-mono">security-reviewer</code> sẽ kiểm tra độc lập theo 4 tiêu chuẩn:
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-slate-300">
+              <div class="p-2.5 bg-surface-900 rounded border border-slate-800">
+                <span class="font-bold text-white">1. Scope & Surgical Diff</span>
+                <p class="text-[11px] text-slate-400 mt-0.5">Đảm bảo chỉ sửa đúng các dòng được yêu cầu, không tự ý sửa format hoặc xóa comment của dự án.</p>
+              </div>
+              <div class="p-2.5 bg-surface-900 rounded border border-slate-800">
+                <span class="font-bold text-white">2. Type Safety & Invariants</span>
+                <p class="text-[11px] text-slate-400 mt-0.5">Tuyệt đối không dùng `any`, không ép kiểu lỏng lẻo (`as unknown as T`), giữ nguyên Type cha.</p>
+              </div>
+              <div class="p-2.5 bg-surface-900 rounded border border-slate-800">
+                <span class="font-bold text-white">3. Edge Case Coverage</span>
+                <p class="text-[11px] text-slate-400 mt-0.5">Bắt buộc xử lý các trạng thái biên: `null`, `undefined`, `empty array`, lỗi mạng timeout.</p>
+              </div>
+              <div class="p-2.5 bg-surface-900 rounded border border-slate-800">
+                <span class="font-bold text-white">4. Security Leak Defense</span>
+                <p class="text-[11px] text-slate-400 mt-0.5">Quét lỗ hổng SQL Injection, Command Injection, hardcoded API key hoặc token rò rỉ.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: Real-world Testing (API, Web UI, User Click) -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2 text-brand-500 font-bold text-sm uppercase tracking-wider border-b border-slate-800 pb-1.5">
+            <i data-lucide="play-circle" class="w-4 h-4"></i>
+            <span data-lang-en="4. Real-World Testing: API, Web UI & User Clicks" data-lang-vi="4. Kiểm Thử Thực Chiến: Test API, Web UI & User Clicks">4. Kiểm Thử Thực Chiến: Test API, Web UI & User Clicks</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <!-- API Testing -->
+            <div class="p-4 bg-surface-950 rounded-xl border border-slate-800 space-y-2 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="font-bold text-accent-cyan flex items-center gap-1.5">
+                  <i data-lucide="server" class="w-4 h-4"></i>
+                  <span>A. Test API Backend (REST / GraphQL)</span>
+                </div>
+                <p class="text-slate-400 text-[11px]">
+                  Agent chạy trực tiếp test runner (`bun test`, `vitest`, `pytest`) hoặc bắn request cURL thật vào server ngầm:
+                </p>
+                <div class="p-2 bg-surface-900 rounded border border-slate-800 font-mono text-[10.5px] text-slate-300 overflow-x-auto">
+                  <code>curl -s -X POST http://localhost:3000/api/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@dev.io","password":"pass"}' | jq .</code>
+                </div>
+              </div>
+              <p class="text-brand-500 text-[11px] pt-1">✅ Nghiệm thu: Status 200, JWT token hợp lệ, DB cập nhật đúng.</p>
+            </div>
+
+            <!-- Web UI & User Click -->
+            <div class="p-4 bg-surface-950 rounded-xl border border-slate-800 space-y-2 flex flex-col justify-between">
+              <div class="space-y-2">
+                <div class="font-bold text-brand-500 flex items-center gap-1.5">
+                  <i data-lucide="mouse-pointer-click" class="w-4 h-4"></i>
+                  <span>B. Test Web UI & User Click (Headless Browser)</span>
+                </div>
+                <p class="text-slate-400 text-[11px]">
+                  Agent điều khiển Chromium headless qua thiết bị `xd://browser`:
+                </p>
+                <ul class="text-slate-400 text-[11px] space-y-1">
+                  <li>1. <strong>`open`:</strong> Mở URL dev `http://localhost:5173/checkout`.</li>
+                  <li>2. <strong>`observe`:</strong> Quét cây Accessibility Tree (ARIA refs).</li>
+                  <li>3. <strong>`fill` & `click`:</strong> Điền form và bấm nút thanh toán.</li>
+                  <li>4. <strong>`screen`:</strong> Chụp ảnh màn hình làm bằng chứng trực quan.</li>
+                </ul>
+              </div>
+              <p class="text-brand-500 text-[11px] pt-1">✅ Nghiệm thu: Form submit thành công + có ảnh chụp screenshot.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-slate-800 bg-surface-950 flex items-center justify-between">
+        <span class="text-[11px] text-slate-400 font-mono" data-lang-en="Press ESC or click outside to close" data-lang-vi="Nhấn phím ESC hoặc bấm ra ngoài để đóng">Nhấn phím ESC hoặc bấm ra ngoài để đóng</span>
+        <button onclick="closeModal('agent-architecture-modal')" class="px-4 py-1.5 rounded-lg bg-surface-800 hover:bg-slate-700 text-white font-medium text-xs transition">
+          <span data-lang-en="Close" data-lang-vi="Đóng">Đóng</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>
