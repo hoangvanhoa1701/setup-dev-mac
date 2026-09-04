@@ -116,7 +116,7 @@
                 <span class="w-5 h-5 rounded-md bg-brand-500/20 text-brand-500 flex items-center justify-center text-xs font-mono">1</span>
                 <span data-lang-en="macOS System & UX" data-lang-vi="Hệ thống macOS & UX">Hệ thống macOS & UX</span>
               </span>
-              <i data-lucide="chevron-right" class="w-4 h-4 text-brand-500"></i>
+              <i data-lucide="check" class="w-4 h-4 text-brand-500"></i>
             </a>
             <a href="#backup-restore" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition">
               <span class="flex items-center gap-2">
@@ -124,24 +124,26 @@
                 <span data-lang-en="Backup & Export Settings" data-lang-vi="Sao lưu & Xuất Setting">Sao lưu & Xuất Setting</span>
               </span>
             </a>
-            <a href="#phase-2" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-60">
+            <a href="#phase-2" class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-800/80 text-accent-cyan font-medium border border-accent-cyan/20">
               <span class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono">2</span>
+                <span class="w-5 h-5 rounded-md bg-accent-cyan/20 text-accent-cyan flex items-center justify-center text-xs font-mono">2</span>
                 <span data-lang-en="Package Manager & CLI" data-lang-vi="Homebrew & CLI Core">Homebrew & CLI Core</span>
               </span>
-              <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">Reviewing</span>
+              <i data-lucide="check" class="w-4 h-4 text-accent-cyan"></i>
             </a>
-            <a href="#phase-3" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-40">
+            <a href="#phase-3" class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-800/80 text-accent-purple font-medium border border-accent-purple/20">
               <span class="flex items-center gap-2">
-                <span class="w-5 h-5 rounded-md bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono">3</span>
+                <span class="w-5 h-5 rounded-md bg-accent-purple/20 text-accent-purple flex items-center justify-center text-xs font-mono">3</span>
                 <span data-lang-en="Runtimes & Containers" data-lang-vi="Runtime & Đóng gói">Runtime & Đóng gói</span>
               </span>
+              <i data-lucide="check" class="w-4 h-4 text-accent-purple"></i>
             </a>
-            <a href="#phase-4" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-40">
+            <a href="#phase-4" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-80">
               <span class="flex items-center gap-2">
                 <span class="w-5 h-5 rounded-md bg-slate-800 text-slate-400 flex items-center justify-center text-xs font-mono">4</span>
                 <span data-lang-en="Vibe Coding & AI Stack" data-lang-vi="Vibe Coding & AI Stack">Vibe Coding & AI Stack</span>
               </span>
+              <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-brand-500">Reviewing</span>
             </a>
             <a href="#phase-5" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-surface-800 transition opacity-40">
               <span class="flex items-center gap-2">
@@ -170,8 +172,8 @@
             <i data-lucide="zap" class="w-4 h-4"></i>
             <span data-lang-en="Vibe Coding Tip" data-lang-vi="Mẹo Vibe Coding">Mẹo Vibe Coding</span>
           </div>
-          <p class="text-xs text-slate-300 leading-relaxed" data-lang-en="Fast key repetition is crucial when navigating with Vim keybindings in Cursor and Zed editors." data-lang-vi="Tốc độ lặp phím nhanh cực kỳ quan trọng khi điều hướng code bằng phím Vim trong Cursor và Zed.">
-            Tốc độ lặp phím nhanh cực kỳ quan trọng khi điều hướng code bằng phím Vim trong Cursor và Zed.
+          <p class="text-xs text-slate-300 leading-relaxed" data-lang-en="Using `mise` eliminates version conflicts across multiple projects, and `OrbStack` keeps your Mac cool with 80% less memory usage than Docker Desktop." data-lang-vi="Sử dụng `mise` giúp tránh xung đột version giữa các dự án, và `OrbStack` giúp máy Mac mát mẻ với lượng RAM tiết kiệm hơn 80% so với Docker Desktop.">
+            Sử dụng `mise` giúp tránh xung đột version giữa các dự án, và `OrbStack` giúp máy Mac mát mẻ với lượng RAM tiết kiệm hơn 80% so với Docker Desktop.
           </p>
         </div>
       </div>
@@ -244,7 +246,10 @@ defaults write -g InitialKeyRepeat -int 15
 defaults write -g KeyRepeat -int 2
 
 <span class="text-slate-500"># Disable press-and-hold popup in favor of real key repeating</span>
-defaults write -g ApplePressAndHoldEnabled -bool false</code></pre>
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+<span class="text-slate-500"># Disable automatic period substitution on double-space</span>
+defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false</code></pre>
           </div>
         </div>
 
@@ -420,6 +425,511 @@ killall Finder</code></pre>
         </div>
       </section>
 
+      <!-- ================================================================= -->
+      <!-- PHASE 2: PACKAGE MANAGER & MODERN CLI CORE -->
+      <!-- ================================================================= -->
+      <section id="phase-2" class="space-y-6">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+          <div class="flex items-center space-x-3">
+            <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-accent-cyan/20 text-accent-cyan font-mono font-bold text-sm border border-accent-cyan/30">02</span>
+            <h3 class="text-xl font-bold text-white" data-lang-en="Package Manager & Modern CLI Core" data-lang-vi="Trình quản lý Gói & Bộ CLI Hiện đại">
+              Trình quản lý Gói & Bộ CLI Hiện đại
+            </h3>
+          </div>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20 font-medium" data-lang-en="Approved" data-lang-vi="Đã duyệt">
+            Đã duyệt
+          </span>
+        </div>
+
+        <!-- 2.1 Xcode CLI Tools & Homebrew -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="box" class="w-4 h-4 text-accent-cyan"></i>
+                <span data-lang-en="2.1. Xcode Command Line Tools & Homebrew" data-lang-vi="2.1. Xcode Command Line Tools & Homebrew">2.1. Xcode Command Line Tools & Homebrew</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Essential C/C++ compiler toolchain & the missing package manager for macOS Apple Silicon." data-lang-vi="Bộ biên dịch C/C++ bắt buộc của Apple và trình quản lý gói phần mềm tiêu chuẩn cho macOS Apple Silicon.">
+                Bộ biên dịch C/C++ bắt buộc của Apple và trình quản lý gói phần mềm tiêu chuẩn cho macOS Apple Silicon.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <!-- Official Links -->
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://developer.apple.com/xcode/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-cyan"></i>
+              <span>Apple Developer (Xcode CLT)</span>
+            </a>
+            <a href="https://brew.sh/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-amber"></i>
+              <span>Homebrew Official (brew.sh)</span>
+            </a>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># 1. Install Apple Xcode Command Line Tools</span>
+xcode-select --install
+
+<span class="text-slate-500"># 2. Install Homebrew</span>
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+<span class="text-slate-500"># 3. Configure Homebrew PATH for Apple Silicon (~/opt/homebrew)</span>
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"</code></pre>
+          </div>
+        </div>
+
+        <!-- 2.2 Starship Prompt -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="sparkles" class="w-4 h-4 text-accent-purple"></i>
+                <span data-lang-en="2.2. Superfast Rust-Powered Shell: Starship Prompt" data-lang-vi="2.2. Shell Prompt Siêu tốc: Starship (Rust)">2.2. Shell Prompt Siêu tốc: Starship (Rust)</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Ultra-lightweight prompt showing Git branch, changes, execution duration, and active runtime versions." data-lang-vi="Prompt terminal cực nhẹ, hiển thị tức thời nhánh Git, thay đổi file, thời gian chạy lệnh và phiên bản runtime hiện tại.">
+                Prompt terminal cực nhẹ, hiển thị tức thời nhánh Git, thay đổi file, thời gian chạy lệnh và phiên bản runtime hiện tại.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://starship.rs/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-purple"></i>
+              <span>Starship Official Website</span>
+            </a>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install Starship via Homebrew</span>
+brew install starship
+
+<span class="text-slate-500"># Activate Starship in your ~/.zshrc</span>
+echo 'eval "$(starship init zsh)"' >> ~/.zshrc</code></pre>
+          </div>
+        </div>
+
+        <!-- 2.3 Interactive Modern CLI Suite -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-5 hover:border-slate-700 transition">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="cpu" class="w-4 h-4 text-brand-500"></i>
+                <span data-lang-en="2.3. High-Performance Modern CLI Toolset (Rust/Go)" data-lang-vi="2.3. Bộ Công cụ CLI Thế hệ mới Siêu tốc (Rust/Go)">2.3. Bộ Công cụ CLI Thế hệ mới Siêu tốc (Rust/Go)</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Click each tool checkbox to toggle installation. The command updates automatically in real-time." data-lang-vi="Nhấp vào ô chọn của từng công cụ để bật/tắt. Câu lệnh cài đặt bên dưới sẽ tự động cập nhật theo thời gian thực.">
+                Nhấp vào ô chọn của từng công cụ để bật/tắt. Câu lệnh cài đặt bên dưới sẽ tự động cập nhật theo thời gian thực.
+              </p>
+            </div>
+
+            <!-- Quick Select / Deselect All -->
+            <div class="flex items-center gap-2 text-xs">
+              <button onclick="toggleAllCliTools(true)" class="px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition" data-lang-en="Select All" data-lang-vi="Chọn tất cả">
+                Chọn tất cả
+              </button>
+              <button onclick="toggleAllCliTools(false)" class="px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-400 hover:text-slate-200 border border-slate-700 transition" data-lang-en="Deselect All" data-lang-vi="Bỏ chọn hết">
+                Bỏ chọn hết
+              </button>
+            </div>
+          </div>
+
+          <!-- Tool Interactive Cards Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+            
+            <!-- Tool: eza -->
+            <div class="p-3.5 rounded-xl bg-surface-950 border border-slate-800/90 hover:border-slate-700 transition space-y-2">
+              <div class="flex items-start justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono font-bold text-accent-cyan text-sm">eza</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700" data-lang-en="Replaces `ls`" data-lang-vi="Thay thế `ls`">Thay thế `ls`</span>
+                  <a href="https://github.com/eza-community/eza" target="_blank" class="text-slate-500 hover:text-slate-300"><i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+                </div>
+                <input type="checkbox" data-cli-pkg="eza" checked onchange="updateCliCommand()" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500">
+              </div>
+              <div class="text-xs space-y-1">
+                <p class="text-slate-300"><strong class="text-slate-200" data-lang-en="What:" data-lang-vi="Là gì:">Là gì:</strong> <span data-lang-en="Modern replacement for `ls` written in Rust." data-lang-vi="Trình duyệt danh sách file/thư mục viết bằng Rust, hiển thị icon, màu sắc phân quyền, xem cây thư mục lồng nhau (`--tree`).">Trình duyệt danh sách file/thư mục viết bằng Rust, hiển thị icon, màu sắc phân quyền, xem cây thư mục lồng nhau (`--tree`).</span></p>
+                <p class="text-slate-400"><strong class="text-slate-300" data-lang-en="Why:" data-lang-vi="Tại sao dùng:">Tại sao dùng:</strong> <span data-lang-en="Displays Git modification status directly beside file names and renders color-coded permissions." data-lang-vi="Hiển thị ngay trạng thái Git (file nào vừa sửa, chưa commit) trực tiếp bên cạnh tên file và phân biệt rõ định dạng file.">Hiển thị ngay trạng thái Git (file nào vừa sửa, chưa commit) trực tiếp bên cạnh tên file và phân biệt rõ định dạng file.</span></p>
+              </div>
+            </div>
+
+            <!-- Tool: bat -->
+            <div class="p-3.5 rounded-xl bg-surface-950 border border-slate-800/90 hover:border-slate-700 transition space-y-2">
+              <div class="flex items-start justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono font-bold text-accent-purple text-sm">bat</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700" data-lang-en="Replaces `cat`" data-lang-vi="Thay thế `cat`">Thay thế `cat`</span>
+                  <a href="https://github.com/sharkdp/bat" target="_blank" class="text-slate-500 hover:text-slate-300"><i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+                </div>
+                <input type="checkbox" data-cli-pkg="bat" checked onchange="updateCliCommand()" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500">
+              </div>
+              <div class="text-xs space-y-1">
+                <p class="text-slate-300"><strong class="text-slate-200" data-lang-en="What:" data-lang-vi="Là gì:">Là gì:</strong> <span data-lang-en="A `cat` clone with syntax highlighting and Git integration." data-lang-vi="Bộ đọc file thay thế `cat`, tự động tô màu cú pháp theo ngôn ngữ, đánh số dòng và tích hợp Git diff.">Bộ đọc file thay thế `cat`, tự động tô màu cú pháp theo ngôn ngữ, đánh số dòng và tích hợp Git diff.</span></p>
+                <p class="text-slate-400"><strong class="text-slate-300" data-lang-en="Why:" data-lang-vi="Tại sao dùng:">Tại sao dùng:</strong> <span data-lang-en="Read code files, json, and configs in Terminal with full syntax highlighting instead of plain unreadable text." data-lang-vi="Xem nhanh file code, json, yaml trực tiếp trong Terminal mà không cần mở Editor, hiển thị rõ dấu `+` xanh / `-` đỏ của Git.">Xem nhanh file code, json, yaml trực tiếp trong Terminal mà không cần mở Editor, hiển thị rõ dấu `+` xanh / `-` đỏ của Git.</span></p>
+              </div>
+            </div>
+
+            <!-- Tool: ripgrep -->
+            <div class="p-3.5 rounded-xl bg-surface-950 border border-slate-800/90 hover:border-slate-700 transition space-y-2">
+              <div class="flex items-start justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono font-bold text-brand-500 text-sm">ripgrep (`rg`)</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700" data-lang-en="Replaces `grep`" data-lang-vi="Thay thế `grep`">Thay thế `grep`</span>
+                  <a href="https://github.com/BurntSushi/ripgrep" target="_blank" class="text-slate-500 hover:text-slate-300"><i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+                </div>
+                <input type="checkbox" data-cli-pkg="ripgrep" checked onchange="updateCliCommand()" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500">
+              </div>
+              <div class="text-xs space-y-1">
+                <p class="text-slate-300"><strong class="text-slate-200" data-lang-en="What:" data-lang-vi="Là gì:">Là gì:</strong> <span data-lang-en="Line-oriented regex search tool written in Rust." data-lang-vi="Công cụ tìm kiếm chuỗi văn bản và Regex nhanh nhất thế giới hiện nay, tự động bỏ qua file trong `.gitignore`.">Công cụ tìm kiếm chuỗi văn bản và Regex nhanh nhất thế giới hiện nay, tự động bỏ qua file trong `.gitignore`.</span></p>
+                <p class="text-slate-400"><strong class="text-slate-300" data-lang-en="Why:" data-lang-vi="Tại sao dùng:">Tại sao dùng:</strong> <span data-lang-en="Searches through massive repos in milliseconds where `grep` takes minutes." data-lang-vi="Tìm kiếm từ khóa xuyên suốt repo lớn hàng triệu dòng code trong vài mili-giây, không bị quét vào thư mục `node_modules` hay `.git`.">Tìm kiếm từ khóa xuyên suốt repo lớn hàng triệu dòng code trong vài mili-giây, không bị quét vào thư mục `node_modules` hay `.git`.</span></p>
+              </div>
+            </div>
+
+            <!-- Tool: fzf -->
+            <div class="p-3.5 rounded-xl bg-surface-950 border border-slate-800/90 hover:border-slate-700 transition space-y-2">
+              <div class="flex items-start justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono font-bold text-accent-amber text-sm">fzf</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700" data-lang-en="Fuzzy Finder" data-lang-vi="Tìm kiếm mờ">Tìm kiếm mờ</span>
+                  <a href="https://github.com/junegunn/fzf" target="_blank" class="text-slate-500 hover:text-slate-300"><i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+                </div>
+                <input type="checkbox" data-cli-pkg="fzf" checked onchange="updateCliCommand()" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500">
+              </div>
+              <div class="text-xs space-y-1">
+                <p class="text-slate-300"><strong class="text-slate-200" data-lang-en="What:" data-lang-vi="Là gì:">Là gì:</strong> <span data-lang-en="General-purpose command-line fuzzy finder." data-lang-vi="Bộ tìm kiếm mờ tương tác cho Terminal (cho phép gõ vài ký tự ngẫu nhiên để tìm chính xác file, branch, commit).">Bộ tìm kiếm mờ tương tác cho Terminal (cho phép gõ vài ký tự ngẫu nhiên để tìm chính xác file, branch, commit).</span></p>
+                <p class="text-slate-400"><strong class="text-slate-300" data-lang-en="Why:" data-lang-vi="Tại sao dùng:">Tại sao dùng:</strong> <span data-lang-en="Press `Ctrl+R` to search shell history interactively; press `Ctrl+T` to locate any file instantly." data-lang-vi="Nhấn `Ctrl + R` để tìm lại mọi lệnh dài từng gõ trong tích tắc; giảm 90% thời gian gõ phím.">Nhấn `Ctrl + R` để tìm lại mọi lệnh dài từng gõ trong tích tắc; giảm 90% thời gian gõ phím.</span></p>
+              </div>
+            </div>
+
+            <!-- Tool: zoxide -->
+            <div class="p-3.5 rounded-xl bg-surface-950 border border-slate-800/90 hover:border-slate-700 transition space-y-2">
+              <div class="flex items-start justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono font-bold text-accent-cyan text-sm">zoxide (`z`)</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700" data-lang-en="Smarter `cd`" data-lang-vi="Thay thế `cd`">Thay thế `cd`</span>
+                  <a href="https://github.com/ajeetdsouza/zoxide" target="_blank" class="text-slate-500 hover:text-slate-300"><i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+                </div>
+                <input type="checkbox" data-cli-pkg="zoxide" checked onchange="updateCliCommand()" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500">
+              </div>
+              <div class="text-xs space-y-1">
+                <p class="text-slate-300"><strong class="text-slate-200" data-lang-en="What:" data-lang-vi="Là gì:">Là gì:</strong> <span data-lang-en="A smarter `cd` command that remembers your frequently visited directories." data-lang-vi="Lệnh chuyển thư mục thông minh, tự động học và nhớ các thư mục bạn hay làm việc.">Lệnh chuyển thư mục thông minh, tự động học và nhớ các thư mục bạn hay làm việc.</span></p>
+                <p class="text-slate-400"><strong class="text-slate-300" data-lang-en="Why:" data-lang-vi="Tại sao dùng:">Tại sao dùng:</strong> <span data-lang-en="Instead of typing `cd ~/Documents/git/setup-dev-mac`, simply type `z setup` to jump there directly." data-lang-vi="Thay vì phải gõ đường dẫn dài `cd ~/Documents/git/setup-dev-mac`, bạn chỉ cần gõ `z setup` là nhảy ngay tới project.">Thay vì phải gõ đường dẫn dài `cd ~/Documents/git/setup-dev-mac`, bạn chỉ cần gõ `z setup` là nhảy ngay tới project.</span></p>
+              </div>
+            </div>
+
+            <!-- Tool: gh -->
+            <div class="p-3.5 rounded-xl bg-surface-950 border border-slate-800/90 hover:border-slate-700 transition space-y-2">
+              <div class="flex items-start justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono font-bold text-white text-sm">gh (GitHub CLI)</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700" data-lang-en="Official CLI" data-lang-vi="GitHub CLI">GitHub CLI</span>
+                  <a href="https://cli.github.com/" target="_blank" class="text-slate-500 hover:text-slate-300"><i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+                </div>
+                <input type="checkbox" data-cli-pkg="gh" checked onchange="updateCliCommand()" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500">
+              </div>
+              <div class="text-xs space-y-1">
+                <p class="text-slate-300"><strong class="text-slate-200" data-lang-en="What:" data-lang-vi="Là gì:">Là gì:</strong> <span data-lang-en="Official GitHub command-line tool." data-lang-vi="Công cụ dòng lệnh chính thức của GitHub giúp quản lý repo, Pull Request, Issue, CI/CD Actions.">Công cụ dòng lệnh chính thức của GitHub giúp quản lý repo, Pull Request, Issue, CI/CD Actions.</span></p>
+                <p class="text-slate-400"><strong class="text-slate-300" data-lang-en="Why:" data-lang-vi="Tại sao dùng:">Tại sao dùng:</strong> <span data-lang-en="Create PRs, clone repositories, and authenticate Git with SSH keys without opening a browser." data-lang-vi="Tạo Pull Request, clone repo, cấu hình SSH keys và duyệt code trực tiếp trong Terminal mà không cần mở trình duyệt web.">Tạo Pull Request, clone repo, cấu hình SSH keys và duyệt code trực tiếp trong Terminal mà không cần mở trình duyệt web.</span></p>
+              </div>
+            </div>
+
+            <!-- Tool: tldr -->
+            <div class="p-3.5 rounded-xl bg-surface-950 border border-slate-800/90 hover:border-slate-700 transition space-y-2">
+              <div class="flex items-start justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono font-bold text-accent-purple text-sm">tldr</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700" data-lang-en="Simple Man" data-lang-vi="Sổ tay lệnh">Sổ tay lệnh</span>
+                  <a href="https://tldr.sh/" target="_blank" class="text-slate-500 hover:text-slate-300"><i data-lucide="external-link" class="w-3.5 h-3.5"></i></a>
+                </div>
+                <input type="checkbox" data-cli-pkg="tldr" checked onchange="updateCliCommand()" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500">
+              </div>
+              <div class="text-xs space-y-1">
+                <p class="text-slate-300"><strong class="text-slate-200" data-lang-en="What:" data-lang-vi="Là gì:">Là gì:</strong> <span data-lang-en="Collaborative cheat sheets for console commands." data-lang-vi="Sổ tay tra cứu lệnh ngắn gọn, tập trung vào các ví dụ thực chiến hay dùng nhất thay vì đọc trang `man` dài dòng.">Sổ tay tra cứu lệnh ngắn gọn, tập trung vào các ví dụ thực chiến hay dùng nhất thay vì đọc trang `man` dài dòng.</span></p>
+                <p class="text-slate-400"><strong class="text-slate-300" data-lang-en="Why:" data-lang-vi="Tại sao dùng:">Tại sao dùng:</strong> <span data-lang-en="Instantly see 5-6 common examples for commands like `tar`, `curl`, `ffmpeg`, `docker`." data-lang-vi="Xem ngay 4-5 ví dụ thực tế cho các lệnh khó nhớ như `tar`, `ffmpeg`, `docker`, `curl` chỉ trong 1 giây.">Xem ngay 4-5 ví dụ thực tế cho các lệnh khó nhớ như `tar`, `ffmpeg`, `docker`, `curl` chỉ trong 1 giây.</span></p>
+              </div>
+            </div>
+
+            <!-- Tool: jq & yq -->
+            <div class="p-3.5 rounded-xl bg-surface-950 border border-slate-800/90 hover:border-slate-700 transition space-y-2">
+              <div class="flex items-start justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="font-mono font-bold text-brand-500 text-sm">jq & yq</span>
+                  <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700" data-lang-en="JSON/YAML" data-lang-vi="Xử lý JSON/YAML">Xử lý JSON/YAML</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <label class="flex items-center gap-1 text-[11px] font-mono text-slate-300">
+                    <input type="checkbox" data-cli-pkg="jq" checked onchange="updateCliCommand()" class="w-3.5 h-3.5 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500">
+                    <span>jq</span>
+                  </label>
+                  <label class="flex items-center gap-1 text-[11px] font-mono text-slate-300">
+                    <input type="checkbox" data-cli-pkg="yq" checked onchange="updateCliCommand()" class="w-3.5 h-3.5 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500">
+                    <span>yq</span>
+                  </label>
+                </div>
+              </div>
+              <div class="text-xs space-y-1">
+                <p class="text-slate-300"><strong class="text-slate-200" data-lang-en="What:" data-lang-vi="Là gì:">Là gì:</strong> <span data-lang-en="Command-line JSON and YAML processors." data-lang-vi="Bộ đôi công cụ xử lý, lọc trường dữ liệu, format màu cho file JSON và YAML.">Bộ đôi công cụ xử lý, lọc trường dữ liệu, format màu cho file JSON và YAML.</span></p>
+                <p class="text-slate-400"><strong class="text-slate-300" data-lang-en="Why:" data-lang-vi="Tại sao dùng:">Tại sao dùng:</strong> <span data-lang-en="Parse API responses, query package.json, and manipulate Docker Compose / Kubernetes manifests." data-lang-vi="Tra cứu nhanh trường dữ liệu từ API response, đọc package.json, và xử lý cấu hình Docker Compose / Kubernetes.">Tra cứu nhanh trường dữ liệu từ API response, đọc package.json, và xử lý cấu hình Docker Compose / Kubernetes.</span></p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Installation Command Box -->
+          <div class="p-4 rounded-xl bg-surface-950 border border-brand-500/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-brand-500 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+                <span data-lang-en="Dynamic Install Command (Based on your selections above)" data-lang-vi="Lệnh cài đặt tùy chỉnh (Tự động cập nhật theo các tool bạn chọn ở trên)">Lệnh cài đặt tùy chỉnh (Tự động cập nhật theo các tool bạn chọn ở trên)</span>
+              </span>
+              <span id="selected-pkg-count" class="text-xs font-mono text-slate-400">8 packages selected</span>
+            </div>
+            
+            <div class="relative bg-surface-900 rounded-lg p-3 font-mono text-xs text-slate-200 border border-slate-800">
+              <button onclick="copyCode(this)" class="absolute top-2.5 right-2.5 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+              </button>
+              <pre class="overflow-x-auto pr-24"><code id="dynamic-brew-cmd">brew install eza bat ripgrep fzf zoxide gh tldr jq yq</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2.4 Aliases & Zshrc Config -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="terminal" class="w-4 h-4 text-accent-amber"></i>
+                <span data-lang-en="2.4. Smart Aliases & Shell Integration (`.zshrc`)" data-lang-vi="2.4. Cấu hình Aliases & Tích hợp Shell (`.zshrc`)">2.4. Cấu hình Aliases & Tích hợp Shell (`.zshrc`)</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Map familiar commands to supercharged tools and auto-load Zoxide and FZF." data-lang-vi="Tự động kích hoạt các công cụ mới khi gõ các lệnh quen thuộc và nạp phím tắt cho Zoxide/FZF.">
+                Tự động kích hoạt các công cụ mới khi gõ các lệnh quen thuộc và nạp phím tắt cho Zoxide/FZF.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Append modern CLI aliases and integrations to ~/.zshrc</span>
+cat &lt;&lt; 'EOF' &gt;&gt; ~/.zshrc
+
+<span class="text-slate-500"># --- Modern CLI Aliases ---</span>
+alias ls="eza --icons --group-directories-first"
+alias ll="eza -la --icons --group-directories-first --git"
+alias lt="eza --tree --level=2 --icons"
+alias cat="bat --paging=never"
+alias grep="rg"
+
+<span class="text-slate-500"># --- Zoxide & FZF Integrations ---</span>
+eval "$(zoxide init zsh)"
+source &lt;(fzf --zsh)
+EOF
+
+<span class="text-slate-500"># Reload shell config</span>
+source ~/.zshrc</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================= -->
+      <!-- PHASE 3: RUNTIMES & CONTAINERS -->
+      <!-- ================================================================= -->
+      <section id="phase-3" class="space-y-6">
+        <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+          <div class="flex items-center space-x-3">
+            <span class="flex items-center justify-center w-8 h-8 rounded-xl bg-accent-purple/20 text-accent-purple font-mono font-bold text-sm border border-accent-purple/30">03</span>
+            <h3 class="text-xl font-bold text-white" data-lang-en="Runtime Manager & Containerization" data-lang-vi="Trình quản lý Runtime & Đóng gói Container">
+              Trình quản lý Runtime & Đóng gói Container
+            </h3>
+          </div>
+          <span class="text-xs px-2.5 py-1 rounded-full bg-accent-purple/10 text-accent-purple border border-accent-purple/20 font-medium" data-lang-en="Approved" data-lang-vi="Đã duyệt">
+            Đã duyệt
+          </span>
+        </div>
+
+        <!-- 3.1 mise -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="layers" class="w-4 h-4 text-accent-purple"></i>
+                <span data-lang-en="3.1. Polyglot Version Manager: `mise` (Replaces nvm, pyenv, rbenv)" data-lang-vi="3.1. Quản lý Đa phiên bản Ngôn ngữ: `mise` (Thay thế nvm, pyenv, rbenv)">3.1. Quản lý Đa phiên bản Ngôn ngữ: `mise` (Thay thế nvm, pyenv, rbenv)</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Ultra-fast polyglot runtime manager written in Rust. Switches Node, Python, Go versions instantly per-directory." data-lang-vi="Công cụ quản lý đa phiên bản ngôn ngữ viết bằng Rust, khởi động terminal nhanh hơn 20x so với `nvm`, tự động chuyển version khi cd vào thư mục project.">
+                Công cụ quản lý đa phiên bản ngôn ngữ viết bằng Rust, khởi động terminal nhanh hơn 20x so với `nvm`, tự động chuyển version khi cd vào thư mục project.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://mise.jdx.dev/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-purple"></i>
+              <span>mise Official Docs (mise.jdx.dev)</span>
+            </a>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install mise via Homebrew</span>
+brew install mise
+
+<span class="text-slate-500"># Activate mise in your ~/.zshrc</span>
+echo 'eval "$(mise activate zsh)"' >> ~/.zshrc
+source ~/.zshrc
+
+<span class="text-slate-500"># Install and activate global Node.js LTS</span>
+mise use --global node@lts</code></pre>
+          </div>
+        </div>
+
+        <!-- 3.2 JS/TS Stack: Bun & pnpm -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="zap" class="w-4 h-4 text-accent-amber"></i>
+                <span data-lang-en="3.2. High-Speed JavaScript / TypeScript: `bun` & `pnpm`" data-lang-vi="3.2. Toolchain JavaScript / TypeScript Siêu tốc: `bun` & `pnpm`">3.2. Toolchain JavaScript / TypeScript Siêu tốc: `bun` & `pnpm`</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Bun runs TS/JS with instant startup; pnpm saves disk space across projects using hard-link content hashing." data-lang-vi="Bun chạy trực tiếp TypeScript không cần build trước; pnpm tiết kiệm hàng chục GB ổ cứng nhờ cơ chế hard link giữa các dự án.">
+                Bun chạy trực tiếp TypeScript không cần build trước; pnpm tiết kiệm hàng chục GB ổ cứng nhờ cơ chế hard link giữa các dự án.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://bun.sh/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-amber"></i>
+              <span>Bun Official (bun.sh)</span>
+            </a>
+            <a href="https://pnpm.io/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-cyan"></i>
+              <span>pnpm Official (pnpm.io)</span>
+            </a>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install Bun (All-in-one JS/TS runtime & package manager)</span>
+curl -fsSL https://bun.sh/install | bash
+
+<span class="text-slate-500"># Install pnpm via Homebrew</span>
+brew install pnpm</code></pre>
+          </div>
+        </div>
+
+        <!-- 3.3 Python Stack: uv -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="code-2" class="w-4 h-4 text-accent-cyan"></i>
+                <span data-lang-en="3.3. Next-Gen Python Stack: `uv` (10x-100x Faster than pip)" data-lang-vi="3.3. Python Thế hệ mới: `uv` (Nhanh hơn pip 10-100 lần)">3.3. Python Thế hệ mới: `uv` (Nhanh hơn pip 10-100 lần)</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Replaces pip, virtualenv, and poetry. Resolves dependencies and installs Python packages in sub-seconds." data-lang-vi="Thay thế hoàn toàn `pip`, `poetry`, `virtualenv`. Quản lý môi trường ảo và cài đặt thư viện Python trong tích tắc.">
+                Thay thế hoàn toàn `pip`, `poetry`, `virtualenv`. Quản lý môi trường ảo và cài đặt thư viện Python trong tích tắc.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://astral.sh/uv" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-accent-cyan"></i>
+              <span>Astral uv Documentation</span>
+            </a>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install uv via Homebrew</span>
+brew install uv
+
+<span class="text-slate-500"># Example: Create virtualenv and run script at lightning speed</span>
+# uv venv && source .venv/bin/activate
+# uv pip install fastapi uvicorn</code></pre>
+          </div>
+        </div>
+
+        <!-- 3.4 Containerization: OrbStack -->
+        <div class="bg-surface-900 border border-slate-800 rounded-xl p-5 space-y-4 hover:border-slate-700 transition">
+          <div class="flex items-start justify-between">
+            <div>
+              <h4 class="text-base font-semibold text-white flex items-center gap-2">
+                <i data-lucide="container" class="w-4 h-4 text-brand-500"></i>
+                <span data-lang-en="3.4. Ultra-Lightweight Docker & Linux VMs: `OrbStack`" data-lang-vi="3.4. Chạy Docker & Linux VM Siêu nhẹ: `OrbStack`">3.4. Chạy Docker & Linux VM Siêu nhẹ: `OrbStack`</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang-en="Starts in 2s, uses 80% less memory than Docker Desktop, 0.1% CPU idle, native Apple Silicon speed." data-lang-vi="Khởi động trong 2 giây, tốn ít hơn 80% RAM so với Docker Desktop, gần như 0% CPU khi idle, tương thích 100% với lệnh docker và docker-compose.">
+                Khởi động trong 2 giây, tốn ít hơn 80% RAM so với Docker Desktop, gần như 0% CPU khi idle, tương thích 100% với lệnh docker và docker-compose.
+              </p>
+            </div>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" onchange="toggleStep(this)" class="w-4 h-4 rounded bg-surface-800 border-slate-700 text-brand-500 focus:ring-brand-500 focus:ring-offset-surface-900">
+              <span class="text-xs text-slate-400 select-none" data-lang-en="Done" data-lang-vi="Xong">Xong</span>
+            </label>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <a href="https://orbstack.dev/" target="_blank" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-surface-950 hover:bg-surface-800 border border-slate-800 text-slate-300 hover:text-white transition">
+              <i data-lucide="external-link" class="w-3 h-3 text-brand-500"></i>
+              <span>OrbStack Official (orbstack.dev)</span>
+            </a>
+          </div>
+
+          <div class="relative bg-surface-950 rounded-lg p-4 font-mono text-xs text-slate-200 border border-slate-800">
+            <button onclick="copyCode(this)" class="absolute top-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-800 hover:bg-slate-700 text-slate-300 text-xs border border-slate-700 transition">
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+              <span class="copy-label" data-lang-en="Copy" data-lang-vi="Sao chép">Sao chép</span>
+            </button>
+            <pre class="overflow-x-auto pr-20"><code><span class="text-slate-500"># Install OrbStack (Lightweight Docker & Linux VM engine)</span>
+brew install --cask orbstack</code></pre>
+          </div>
+        </div>
+      </section>
+
       <!-- Footer -->
       <footer class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500 space-y-2">
         <p data-lang-en="Built for Modern Developers & Vibe Coding • macOS Apple Silicon" data-lang-vi="Dành riêng cho Lập trình viên hiện đại & Vibe Coding • macOS Apple Silicon">
@@ -492,6 +1002,43 @@ killall Finder</code></pre>
           applyCmdCode.textContent = 'bash backups/apply-my-settings.en.sh';
         }
       }
+
+      updateCliCommand();
+    }
+
+    // Dynamic CLI Installation Command Generator
+    function updateCliCommand() {
+      const checkboxes = document.querySelectorAll('input[data-cli-pkg]');
+      const selectedPkgs = [];
+      checkboxes.forEach(cb => {
+        if (cb.checked) {
+          selectedPkgs.push(cb.getAttribute('data-cli-pkg'));
+        }
+      });
+
+      const cmdElement = document.getElementById('dynamic-brew-cmd');
+      const countElement = document.getElementById('selected-pkg-count');
+
+      if (!cmdElement) return;
+
+      if (selectedPkgs.length === 0) {
+        cmdElement.textContent = currentLang === 'vi' ? '# Chưa chọn công cụ nào' : '# No packages selected';
+      } else {
+        cmdElement.textContent = `brew install ${selectedPkgs.join(' ')}`;
+      }
+
+      if (countElement) {
+        countElement.textContent = currentLang === 'vi' 
+          ? `Đã chọn ${selectedPkgs.length}/${checkboxes.length} công cụ` 
+          : `${selectedPkgs.length}/${checkboxes.length} packages selected`;
+      }
+    }
+
+    function toggleAllCliTools(state) {
+      document.querySelectorAll('input[data-cli-pkg]').forEach(cb => {
+        cb.checked = state;
+      });
+      updateCliCommand();
     }
 
     // Copy to Clipboard
@@ -529,15 +1076,16 @@ killall Finder</code></pre>
 
     // Progress Checklist
     function toggleStep(checkbox) {
-      const allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-      const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+      const allCheckboxes = document.querySelectorAll('input[type="checkbox"]:not([data-cli-pkg])');
+      const checked = document.querySelectorAll('input[type="checkbox"]:not([data-cli-pkg]):checked');
       const percent = Math.round((checked.length / allCheckboxes.length) * 100);
       document.getElementById('progress-stat').textContent = `${percent}%`;
     }
 
-    // Init language on load
+    // Init language & dynamic CLI on load
     document.addEventListener('DOMContentLoaded', () => {
       setLanguage(currentLang);
+      updateCliCommand();
     });
   </script>
 </body>
